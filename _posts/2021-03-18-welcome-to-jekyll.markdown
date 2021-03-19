@@ -1,16 +1,15 @@
 ---
 layout: post
-title:  "Welcome to Jekyll!"
+title:  "greetings Traveler"
 date:   2021-03-18 19:32:15 -0700
-categories: jekyll update
+categories: updates
 ---
-You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
+We went live today with the aid of `jekyll` which we don't know much about yet. Seems quite interesting.
+Initially I wanted to build the page with html and css from scratch but I figured how daunting it would be 
+as I haven't used them in a long time and I don't know exactly how dynamic is but what I do know for sure is
+I don't like copying the same lines of code on multiple pages and maintaining it and so here we are!
 
-Jekyll requires blog post files to be named according to the following format:
-
-`YEAR-MONTH-DAY-title.MARKUP`
-
-Where `YEAR` is a four-digit number, `MONTH` and `DAY` are both two-digit numbers, and `MARKUP` is the file extension representing the format used in the file. After that, include the necessary front matter. Take a look at the source for this post to get an idea about how it works.
+Leaving this here for future use
 
 Jekyll also offers powerful support for code snippets:
 
