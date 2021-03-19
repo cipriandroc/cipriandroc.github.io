@@ -22,6 +22,7 @@ title: cipriandroc
 email: ciprian.droc@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
   blogstyle page to showcase scripts/apps I'm working on
+  feel free to reuse my material, hope it helps you out!
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: angrygr8
