@@ -1,0 +1,14 @@
+---
+layout: default
+---
+
+<strong>Powershell</strong>
+<p>this is:{{ name }}</p>
+<nav>
+    <ul>
+        {% for pwsh in site.powershell %}
+        <h2>{{ pwsh.name }}</h2>
+        <p>{{ pwsh.content | markdownify }}</p>
+        {% endfor %}
+    </ul>
+</nav>

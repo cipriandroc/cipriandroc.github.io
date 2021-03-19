@@ -28,6 +28,13 @@ url: "" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  cipriandroc
 
 # Build settings
+collections: 
+  powershell:
+    output: true
+    permalink: /powershell/:path/
+  python:
+    output: true
+collections_dir: my_collections
 theme: minima
 plugins:
   - jekyll-feed
