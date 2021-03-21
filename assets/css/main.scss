@@ -70,6 +70,7 @@ a:focus {
 
 #sidebar .sidebar-header {
     padding: 20px;
+    margin: auto;
 }
 #sidebar .sidebar-button-holder {
     padding: 0px;
@@ -79,7 +80,6 @@ a:focus {
 
 #sidebar ul.components {
     padding: 20px 0;
-    border-bottom: 1px solid #47748b;
 }
 
 #sidebar ul p {
@@ -95,13 +95,13 @@ a:focus {
 
 #sidebar ul li a:hover {
     color: #7386D5;
-    background: #fff;
+    background: rgb(147, 154, 232);
 }
 
 #sidebar ul li.active>a,
 a[aria-expanded="true"] {
     color: #fff;
-    background: #6d7fcc;
+
 }
 
 a[data-toggle="collapse"] {
