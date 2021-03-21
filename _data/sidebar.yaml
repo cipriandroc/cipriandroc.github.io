@@ -1,0 +1,14 @@
+- name: Home
+  link: /
+- name: About
+  link: /about
+- name: subtest
+  link: /subtest
+  items:
+    - name: asd
+      link: /asd
+    - name: fsd
+      link: /fsd
+    - name: trebuci
+      link: /trebuci
+
