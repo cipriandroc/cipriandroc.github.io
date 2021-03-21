@@ -1,10 +1,20 @@
 - name: Home
   link: /
+- name: powershell
+  link: /powershell
+  subpage:
+    - name: powershell_project1
+    - name: powershell_project2
+- name: python
+  link: /pyhton
+  subpage:
+    - name: python_project1
+    - name: python_project2
 - name: About
   link: /about
 - name: subtest
   link: /subtest
-  items:
+  subpage:
     - name: asd
       link: /asd
     - name: fsd
