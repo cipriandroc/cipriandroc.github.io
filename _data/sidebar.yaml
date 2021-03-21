@@ -3,22 +3,17 @@
 - name: powershell
   link: /powershell
   subpage:
+    - name: index
+      link: /powershell
     - name: powershell_project1
     - name: powershell_project2
 - name: python
-  link: /pyhton
+  link: /python
   subpage:
+    - name: index
+      link: /python
     - name: python_project1
     - name: python_project2
 - name: About
   link: /about
-- name: subtest
-  link: /subtest
-  subpage:
-    - name: asd
-      link: /asd
-    - name: fsd
-      link: /fsd
-    - name: trebuci
-      link: /trebuci
 
