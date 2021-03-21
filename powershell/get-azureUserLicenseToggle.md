@@ -1,7 +1,9 @@
 ---
-layout: default
+layout: sublayout
+belongsto: powershell
 title: Get-AzureUserLicenseToggleDetails.ps1
 ---
+
 Get-AzureLicenseToggleDetails.ps1
 
 https://github.com/cipriandroc/Get-AzureUserLicenseToggleDetails.ps1
