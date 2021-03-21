@@ -107,7 +107,7 @@ a[aria-expanded="true"] {
 a[data-toggle="collapse"] {
     position: relative;
 }
-
+/* the arrow on the sidebar
 .dropdown-toggle::after {
     display: block;
     position: absolute;
@@ -115,11 +115,12 @@ a[data-toggle="collapse"] {
     right: 20px;
     transform: translateY(-50%);
 }
-
+*/
+/*color sublink items in sidebar*/
 ul ul a {
     font-size: 0.9em !important;
     padding-left: 30px !important;
-    background: #6d7fcc;
+    background: #27495c;
 }
 
 ul.CTAs {
@@ -173,4 +174,10 @@ a.article:hover {
     #sidebarCollapse span {
         display: none;
     }
+}
+
+
+.bottom-footer {
+    position: fixed;
+    bottom: 0;
 }

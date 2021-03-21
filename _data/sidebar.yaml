@@ -5,7 +5,8 @@
   subpage:
     - name: index
       link: /powershell
-    - name: powershell_project1
+    - name: get-azureUserLicenseToggle.ps1
+      link: /get-azureUserLicenseToggle
     - name: powershell_project2
 - name: python
   link: /python

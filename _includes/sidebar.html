@@ -10,7 +10,6 @@
         <ul class="list-unstyled components">
             <div class="sidebar-header">
                 <h3>ciprian droc</h3>
-                <p>showcasing projects I'm working on</p>
             </div>
             {% for item in site.data.sidebar %}
             {% if item.subpage %}
@@ -36,7 +35,7 @@
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div id="subContent">
                 {{ content}}
-                {% include footer.html %}
             </div>
+            {% include footer.html %}
     </div>
 </div>
