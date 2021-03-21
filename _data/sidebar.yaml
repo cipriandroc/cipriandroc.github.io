@@ -14,7 +14,8 @@
   subpage:
     - name: index
       link: /python
-    - name: python_project1
+    - name: logmein_computer_lastonline.py
+      link: /python/logmein_computer_lastonline
     - name: python_project2
 - name: About
   link: /about
