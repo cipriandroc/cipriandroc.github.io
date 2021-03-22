@@ -64,7 +64,7 @@ a:focus {
 #sidebar {
     min-width: 300px;
     max-width: 350px;
-    background: #2f556b;
+    /*background: #2f556b;*/
     background-image: url(/assets/img/background_main.jpeg);
     color: #fff;
     transition: all 0.3s;
@@ -95,8 +95,7 @@ a:focus {
 }
 
 #sidebar ul li a:hover {
-    color: #7386D5;
-    background: rgb(147, 154, 232);
+    background: rgba(255, 255, 255, 0.249);
 }
 
 #sidebar ul li.active>a,
@@ -121,7 +120,7 @@ a[data-toggle="collapse"] {
 ul ul a {
     font-size: 0.9em !important;
     padding-left: 30px !important;
-    background: #27495c;
+    background: rgba(255, 255, 255, 0.112);
 }
 
 ul.CTAs {
@@ -156,6 +155,7 @@ a.article:hover {
     padding: 0px;
     min-height: 100vh;
     transition: all 0.3s;
+    /*background-color: #343233; -- keep this for dark mode maybe */
 }
 #subContent {
     padding: 20px;
@@ -179,6 +179,9 @@ a.article:hover {
 
 
 .bottom-footer {
-    position: fixed;
-    bottom: 0;
+    position:fixed;
+    bottom:0;
+    width:100%;
+    height:60px;
+    background-color: white;
 }
