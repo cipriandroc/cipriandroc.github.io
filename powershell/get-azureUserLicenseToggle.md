@@ -24,7 +24,9 @@ There are a few builtin checks that give a warning wether the path is not correc
 {% highlight powershell %}
 WARNING: No -exportpath parameter provided, results have not be exported
 WARNING: c:\data\outputfsdf not found! Results have not been exported!
+{% endhighlight %}
 There is another warning message when there’s no license found
+{% highlight powershell %}
 WARNING: No licenses found
 {% endhighlight %}
 In a future realease I want to generate an object when a user is not found or it doesn’t have licenses assigned, so it can be reported as well.
