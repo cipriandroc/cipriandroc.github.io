@@ -182,11 +182,12 @@ a.article:hover {
     }
 }
 
+.topBar {
+    line-height: 0.8;
+}
 
 .bottom-footer {
-    position:fixed;
     bottom:0;
     width:100%;
     height:60px;
-    background-color: white;
 }

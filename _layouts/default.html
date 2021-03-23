@@ -12,16 +12,22 @@
       {% include sidebar.html %}
       <div id="content">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <div class="container-fluid">
+          <div class="topBar">
               <button type="button" id="sidebarCollapse" class="btn btn-info">
                   <i class="fas fa-align-left"></i>
               </button>
+              <br></br>
+              {% if page.belongsto %}
+              <small><a href ="/{{page.belongsto}}">.\{{page.belongsto}}</a><a href="{{page.link}}">\{{ page.title }}</a></small>
+              {% else %}
+              <small><a href="{{page.link}}">\{{ page.title }}</a></small>
+              {% endif %}
           </div>
       </nav>
       <div id="subContent">
         {{ content }}
+        {% include footer.html %}
       </div>
-      {% include footer.html %}
       </div>
     </div>
   </body>
