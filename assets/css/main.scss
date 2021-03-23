@@ -62,8 +62,8 @@ a:focus {
 }
 
 #sidebar {
-    min-width: 300px;
-    max-width: 350px;
+    min-width: 400px;
+    max-width: 400px;
     /*background: #2f556b;*/
     background-image: url(/assets/img/background_main.jpeg);
     color: #fff;
@@ -71,7 +71,7 @@ a:focus {
 }
 
 #sidebar.active {
-    margin-left: -250px;
+    margin-left: -400px;
 }
 
 #sidebar .sidebar-header {
@@ -172,7 +172,7 @@ a.article:hover {
 
 @media (max-width: 768px) {
     #sidebar {
-        margin-left: -250px;
+        margin-left: -400px;
     }
     #sidebar.active {
         margin-left: 0;
