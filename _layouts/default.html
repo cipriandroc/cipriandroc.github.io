@@ -18,9 +18,9 @@
               </button>
               <br></br>
               {% if page.belongsto %}
-              <small><a href ="/{{page.belongsto}}">.\{{page.belongsto}}</a><a href="{{page.link}}">\{{ page.title }}</a></small>
+              <small><a href ="/">.</a><a href ="/{{page.belongsto}}">\{{page.belongsto}}</a><a href="{{page.link}}">\{{ page.title }}</a></small>
               {% else %}
-              <small><a href="{{page.link}}">\{{ page.title }}</a></small>
+              <small><a href ="/">.</a><a href="{{page.link}}">\{{ page.title }}</a></small>
               {% endif %}
           </div>
       </nav>
