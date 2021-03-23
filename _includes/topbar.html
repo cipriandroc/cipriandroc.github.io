@@ -1,0 +1,15 @@
+<div class="topBar">
+    <button type="button" id="sidebarCollapse" class="btn btn-info"><i class="fas fa-align-left"></i></button>
+    <button type="button" id="darkModeBtn" class="btn btn-dark" onclick="myFunction()"><i class="fas fa-adjust"></i></button>
+    <br></br>
+    
+    {% if page.title != "Home" %}
+    {% assign homelink = '<a href ="/">.</a>'%}
+    {% capture currentPage %}<a href="{{page.link}}">\{{ page.title }}</a>{% endcapture %}
+    {% if page.belongsto %}
+    {% capture dirLink %}<a href ="/{{page.belongsto}}">\{{page.belongsto}}</a>{% endcapture %}
+    {% endif %}
+    {% endif %}
+
+    <small>{{homelink}}{{dirLink}}{{currentPage}}</small>
+</div>

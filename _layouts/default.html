@@ -2,37 +2,27 @@
 <html lang="{{ site.lang | default: "en-US" }}">
   {% seo %}
   <head>
+    <script>
+      function myFunction() {
+         var element = document.body;
+         element.classList.toggle("bg-dark");
+         darkModeBtn.classList.toggle("bg-light");
+      }
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <title>{{ page.title }} - {{ site.title }}</title>
     <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
   </head>
-  <body>
+  <body class="bg-light">
     <div class="wrapper">
-      {% include sidebar.html %}
+        {% include sidebar.html %}
       <div id="content">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-          <div class="topBar">
-              <button type="button" id="sidebarCollapse" class="btn btn-info">
-                  <i class="fas fa-align-left"></i>
-              </button>
-              <br></br>
-              
-              {% if page.title != "Home" %}
-              {% assign homelink = '<a href ="/">.</a>'%}
-              {% capture currentPage %}<a href="{{page.link}}">\{{ page.title }}</a>{% endcapture %}
-              {% if page.belongsto %}
-              {% capture dirLink %}<a href ="/{{page.belongsto}}">\{{page.belongsto}}</a>{% endcapture %}
-              {% endif %}
-              {% endif %}
-
-              <small>{{homelink}}{{dirLink}}{{currentPage}}</small>
-          </div>
-      </nav>
-      <div id="subContent">
-        {{ content }}
-        {% include footer.html %}
-      </div>
+        {% include topbar.html %}
+        <div id="subContent">
+          {{ content }}
+          {% include footer.html %}
+        </div>
       </div>
     </div>
   </body>
