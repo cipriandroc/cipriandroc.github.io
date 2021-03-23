@@ -17,11 +17,16 @@
                   <i class="fas fa-align-left"></i>
               </button>
               <br></br>
+              
+              {% if page.title != "Home" %}
+              {% assign homelink = '<a href ="/">.</a>'%}
+              {% capture currentPage %}<a href="{{page.link}}">\{{ page.title }}</a>{% endcapture %}
               {% if page.belongsto %}
-              <small><a href ="/">.</a><a href ="/{{page.belongsto}}">\{{page.belongsto}}</a><a href="{{page.link}}">\{{ page.title }}</a></small>
-              {% else %}
-              <small><a href ="/">.</a><a href="{{page.link}}">\{{ page.title }}</a></small>
+              {% capture dirLink %}<a href ="/{{page.belongsto}}">\{{page.belongsto}}</a>{% endcapture %}
               {% endif %}
+              {% endif %}
+
+              <small>{{homelink}}{{dirLink}}{{currentPage}}</small>
           </div>
       </nav>
       <div id="subContent">
