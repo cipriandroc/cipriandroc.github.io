@@ -2,6 +2,7 @@
 layout: sublayout
 belongsto: powershell
 title: get-InstalledSoftware.ps1
+post_date: 08.30.2020
 ---
 
 this was created from a need one day to determine if a certain package version was deployed to a pool of workstations.

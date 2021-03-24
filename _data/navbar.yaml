@@ -7,6 +7,8 @@
       link: /powershell/get-azureUserLicenseToggle
     - name: get-InstalledSoftware.ps1
       link: /powershell/get-InstalledSoftware
+    - name: batchUserCreation.ps1
+      link: /powershell/batchUserCreation
 - name: python
   link: /python
   subpage:

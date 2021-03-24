@@ -2,10 +2,26 @@
 layout: default
 title: home
 ---
-<div class="banner-container"></div>
-
-<div class="featured-container">
-    
-
-
+<div class="maintitle card text-white">
+    <img class="card-img" src="/assets/img/homepage_highlight_snippet.png" alt="Card image">
+    <div class="card-img-overlay">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+      <p class="card-text">Last updated 3 mins ago</p>
+    </div>
 </div>
+<br></br>
+
+<div class="card-deck">
+    {% for item in site.data.mainpage_highlight  %}
+    <div class="card">
+      <img class="card-img-top" src="/assets/img/homepage_highlight_snippet.png" alt="Card image cap">
+      <div class="card-body">
+        <a href="{{item.link}}"><h5 class="card-title">{{ item.name }}</h5></a>
+        <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+        <p class="card-text"><small class="text-muted">posted on: {{item.name.post_date}}</small></p>
+      </div>
+    </div>
+    {% endfor %}
+</div>
+<br></br>
