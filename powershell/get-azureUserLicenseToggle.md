@@ -1,7 +1,7 @@
 ---
 layout: sublayout
 belongsto: powershell
-title: Get-AzureUserLicenseToggleDetails.ps1
+title: get-AzureUserLicenseToggleDetails.ps1
 ---
 
 <https://github.com/cipriandroc/Get-AzureUserLicenseToggleDetails.ps1>

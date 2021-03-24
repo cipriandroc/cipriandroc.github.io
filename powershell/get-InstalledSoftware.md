@@ -1,7 +1,7 @@
 ---
 layout: sublayout
 belongsto: powershell
-title: Get-InstalledSoftware.ps1
+title: get-InstalledSoftware.ps1
 ---
 
 this was created from a need one day to determine if a certain package version was deployed to a pool of workstations.
