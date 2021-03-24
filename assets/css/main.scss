@@ -1,13 +1,20 @@
 ---
 ---
 @import 'bootstrap/bootstrap';
-
 @import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+
 body {
     font-family: 'Poppins', sans-serif;
     background: #fafafa;
 }
-
+.Content {
+    margin: auto;
+    margin-top: 100px;
+    width: 90%;
+    text-align:justify;
+    overflow: visible;
+}
+/* text */
 p {
     font-family: 'Poppins', sans-serif;
     font-size: 1.1em;
@@ -21,7 +28,6 @@ small {
     color: #999;
 }
 
-/*links*/
 a,
 a:hover,
 a:focus {
@@ -29,97 +35,6 @@ a:focus {
     text-decoration: none;
     transition: all 0.3s;
 }
-
-.topBar {
-    width: 100%;
-    line-height: 0.8;
-    padding: 10px;
-
-}
-
-.bottom-footer {
-    bottom:0;
-    width:100%;
-    height:60px;
-    text-align: center;
-}
-
-/* ---------------------------------------------------
-    SIDEBAR STYLE
------------------------------------------------------ */
-
-.wrapper {
-    display: flex;
-    width: 100%;
-    align-items: stretch;
-}
-
-#sidebar {
-    min-width: 400px;
-    max-width: 400px;
-    /*background: #2f556b;*/
-    background-image: url(/assets/img/background_main.jpeg);
-    color: #fff;
-    transition: all 0.3s;
-}
-
-#sidebar.active {
-    margin-left: -400px;
-}
-
-#sidebar .sidebar-header {
-    padding: 20px;
-    margin: auto;
-}
-
-#sidebar ul.components {
-    padding: 20px 0;
-}
-
-#sidebar ul p {
-    color: #fff;
-    padding: 10px;
-}
-
-#sidebar ul li a {
-    padding: 10px;
-    font-size: 1.1em;
-    display: block;
-}
-
-#sidebar ul li a:hover {
-    background: rgba(255, 255, 255, 0.249);
-}
-
-#sidebar ul li.active>a,
-a[aria-expanded="true"] {
-    color: #fff;
-
-}
-
-a[data-toggle="collapse"] {
-    position: relative;
-}
-
-/*color sublink items in sidebar*/
-ul ul a {
-    font-size: 0.9em !important;
-    padding-left: 30px !important;
-    background: rgba(255, 255, 255, 0.112);
-}
-
-ul.CTAs {
-    padding: 20px;
-}
-
-ul.CTAs a {
-    text-align: center;
-    font-size: 0.9em !important;
-    display: block;
-    border-radius: 5px;
-    margin-bottom: 5px;
-}
-
 a.download {
     background: #fff;
     color: #7386D5;
@@ -130,38 +45,31 @@ a.article:hover {
     background: #6d7fcc !important;
     color: #fff !important;
 }
+/* textend */
 
-/* ---------------------------------------------------
-    CONTENT STYLE
------------------------------------------------------ */
-
-#content {
-    padding: 0px;
-    min-height: 100vh;
-    transition: all 0.3s;
-    overflow: auto;
+.topBar {
     width: 100%;
-    /*background-color: #343233; -- keep this for dark mode maybe */
+    line-height: 0.8;
+    padding: 10px;
 }
-#subContent {
-    margin: auto;
-    margin-top: 100px;
-    width: 90%;
-    text-align:justify;
+.topBar-content {
+    padding-left: 20%;
+}
+.navbar-menu {
+
 }
 
-/* ---------------------------------------------------
-    MEDIAQUERIES
------------------------------------------------------ */
+.bottom-footer {
+    bottom:0;
+    width:100%;
+    height:60px;
+    text-align: center;
+}
 
-@media (max-width: 768px) {
-    #sidebar {
-        margin-left: -400px;
-    }
-    #sidebar.active {
-        margin-left: 0;
-    }
-    #sidebarCollapse span {
-        display: none;
-    }
+.banner-container {
+    width: 100%;
+    height: 700px;
+    background-image:url('/assets/img/homepage_highlight.jpeg');
+    background-repeat:no-repeat;
+    background-position:center;
 }

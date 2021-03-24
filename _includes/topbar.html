@@ -1,13 +1,7 @@
 <div class="topBar">
-    {% include navbar.html %}
-    
-    {% if page.title != "Home" %}
-    {% assign homelink = '<a href ="/">.</a>'%}
-    {% capture currentPage %}<a href="{{page.link}}">\{{ page.title }}</a>{% endcapture %}
-    {% if page.belongsto %}
-    {% capture dirLink %}<a href ="/{{page.belongsto}}">\{{page.belongsto}}</a>{% endcapture %}
-    {% endif %}
-    {% endif %}
+    <div class="topBar-content">
+        {% include navbar.html %}
+        
 
-    <small>{{homelink}}{{dirLink}}{{currentPage}}</small>
+    </div>
 </div>

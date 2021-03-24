@@ -4,8 +4,6 @@ belongsto: powershell
 title: Get-AzureUserLicenseToggleDetails.ps1
 ---
 
-## Get-AzureLicenseToggleDetails.ps1
-
 <https://github.com/cipriandroc/Get-AzureUserLicenseToggleDetails.ps1>
 
 This script was created to report Office365 User License assigments. It’s purpose is to capture the license assignments to users wether it’s needed for reporting or before a major change such as perhaps switching to an Azure Group that has default assigments.

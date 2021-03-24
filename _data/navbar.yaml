@@ -15,6 +15,6 @@
     - name: logmein_computer_lastonline.py
       link: /python/logmein_computer_lastonline
     - name: python_project2
-- name: About
+- name: about
   link: /about
 
