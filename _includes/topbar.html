@@ -1,7 +1,5 @@
 <div class="topBar">
-    <button type="button" id="sidebarCollapse" class="btn btn-info"><i class="fas fa-align-left"></i></button>
-    <button type="button" id="darkModeBtn" class="btn btn-dark" onclick="myFunction()"><i class="fas fa-adjust"></i></button>
-    <br></br>
+    {% include navbar.html %}
     
     {% if page.title != "Home" %}
     {% assign homelink = '<a href ="/">.</a>'%}

@@ -11,7 +11,7 @@ The challenge here is the computers had to be on VPN to be able to append the in
 Let’s dive right into it and then we can explain the thought process and elements
 
 ##Replace framework in $software with desired application name
-
+{% highlight powershell %}
 $software = '*yoursoftware*'
 $ExportLocation = "c:\yourexportlocation.csv"
 
@@ -20,15 +20,14 @@ $location2 = Get-ItemProperty HKLM:\SOFTWARE\WOW6432Node\Microsoft\Windows\Curre
 $results = $null;
 $results = $location1 + $location2 | Where-Object {($_.displayname -like "$software")} 
 
-if ($results -ne $null)
-{
-$results | Select-Object $Env:ComputerName,DisplayName, DisplayVersion, 
-@{Name="InstallDate"; Expression={([datetime]::ParseExact($_.InstallDate, 'yyyyMMdd', $null)).toshortdatestring()}} | Format-Table -AutoSize  | out-file -append $ExportLocation
+if ($results -ne $null) {
+    $results | Select-Object $Env:ComputerName,DisplayName, DisplayVersion, 
+    @{Name="InstallDate"; Expression={([datetime]::ParseExact($_.InstallDate, 'yyyyMMdd', $null)).toshortdatestring()}} | Format-Table -AutoSize  | out-file -append $ExportLocation
 }
-else
-{
-write-host "$Env:ComputerName doesn't have the $software installed";
+else {
+    write-host "$Env:ComputerName doesn't have the $software installed";
 }
+{% endhighlight %}
 Note that this script was built with an export function in mind, if you only want Powershell to display the information then remove the last line inside the IF statement (out-file)
 
 We start off by declaring two variables:
