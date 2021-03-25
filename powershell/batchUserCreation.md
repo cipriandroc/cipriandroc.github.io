@@ -3,6 +3,7 @@ layout: sublayout
 belongsto: powershell
 title: batchUserCreation.ps1
 post_date: 08.30.2020
+tags: batch, user creation, ad
 ---
 Let’s just start off with the results:
 {% highlight powershell %}

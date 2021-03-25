@@ -3,6 +3,7 @@ layout: sublayout
 belongsto: powershell
 title: get-AzureUserLicenseToggleDetails.ps1
 post_date: 09.05.2020
+tags: o365, azure, license, report
 ---
 
 <https://github.com/cipriandroc/Get-AzureUserLicenseToggleDetails.ps1>
