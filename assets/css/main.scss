@@ -7,12 +7,15 @@ body {
     font-family: 'Poppins', sans-serif;
     background: #fafafa;
 }
-.Content {
+.subcontent-wrapper {
     margin: auto;
-    margin-top: 100px;
     width: 90%;
     text-align:justify;
     overflow: visible;
+}
+.featured-wrapper {
+    margin: auto;
+    width: 95%;
 }
 /* text */
 p {
@@ -60,13 +63,9 @@ a.article:hover {
 
 /* index specific */
 
-.banner-container {
-    width: 100%;
-    height: 500px;
-    background-image:url('/assets/img/homepage_highlight.jpeg');
-    background-repeat:no-repeat;
-    background-position:center;
-}
 .page-title-wrapper {
-    display: inline-block
+    display: inline-block;
+    padding-left: 5%;
+    padding-top: 5%;
+    padding-bottom: 5%;
 }

@@ -3,18 +3,18 @@
   subpage:
     - name: index
       link: /powershell
-    - name: get-azureUserLicenseToggle.ps1
+    - name: Azure License Assignment Report
       link: /powershell/get-azureUserLicenseToggle
-    - name: get-InstalledSoftware.ps1
+    - name: Installed Software Report
       link: /powershell/get-InstalledSoftware
-    - name: batchUserCreation.ps1
+    - name: Create Batch Users
       link: /powershell/batchUserCreation
 - name: python
   link: /python
   subpage:
     - name: index
       link: /python
-    - name: logmein_computer_lastonline.py
+    - name: logmeIn lastOnline Report
       link: /python/logmein_computer_lastonline
     - name: python_project2
 - name: about

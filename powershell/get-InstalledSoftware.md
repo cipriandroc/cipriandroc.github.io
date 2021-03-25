@@ -1,8 +1,8 @@
 ---
 layout: sublayout
 belongsto: powershell
-title: get-InstalledSoftware.ps1
-scriptname: get-InstalledSoftware.ps1
+title: Installed Software Report
+filename: get-InstalledSoftware.ps1
 post_date: 08.30.2020
 tags: installed software, search, report
 description: Controller script that reports installed software on target machine (local or remote),accepts parameters for software name, target machine, export location.
