@@ -9,7 +9,7 @@ body {
 }
 .subcontent-wrapper {
     margin: auto;
-    width: 90%;
+    width: 1080px;
     text-align:justify;
     overflow: visible;
 }
@@ -64,9 +64,9 @@ a.article:hover {
 
 .page-title-wrapper {
     display: inline-block;
-    padding-left: 5%;
-    padding-top: 5%;
-    padding-bottom: 5%;
+    padding-left: 100px;
+    padding-top: 50px;
+    padding-bottom: 50px;
 }
 .home-banner {
     background-image: url(/assets/img/homepage_highlight_snippet.png);
