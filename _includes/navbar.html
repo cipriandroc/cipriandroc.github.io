@@ -13,7 +13,7 @@
           {% assign subitemlink = nil %}
           
           {% if item.isparent %}
-            {% assign item_subpages = site.html_pages | where: "belongsto", item.name  %}
+            {% assign item_subpages = site.html_pages | where: "belongsto", item.name | sort: "subitem_index" %}
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ item.name }}</a>
               <div class="dropdown-menu" aria-labelledby="navbarDropdown">

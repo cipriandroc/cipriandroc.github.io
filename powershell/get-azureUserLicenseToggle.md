@@ -3,6 +3,7 @@ layout: sublayout
 belongsto: powershell
 title: Azure License Assignment Report
 filename: get-AzureUserLicenseToggleDetails.ps1
+subitem_index: 1
 post_date: 09.05.2020
 tags: o365, azure, license, report
 description: Reports o365 licenses assigned to users. Provide a list of user names and the results are exported to a CSV file.
