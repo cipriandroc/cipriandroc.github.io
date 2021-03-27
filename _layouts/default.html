@@ -16,37 +16,14 @@
     <link rel="stylesheet" href="{{ "/assets/css/main.css" | relative_url }}">
   </head>
 
-
   <body class="bg-light">
     {% include navbar.html %}
           <div class="Content">
-            
-            <!-- codeblock that generates pagetitle -->
-            {% if site.data.exclude_page_title.exclusions contains page.title  %}
-            {% else %}
-              {% assign pagetitle_var = page.title %}
-              <div class="page-title-wrapper">
-                            <!-- codeblock that generates address navigation -->
-                            {% if page.title != "Home" %}
-                            {% assign homelink = '<a href ="/">.</a>'%}
-                            {% capture currentPage %}<a href="{{page.link}}">\{{ page.filename }}</a>{% endcapture %}
-                            {% if page.belongsto %}
-                              {% capture dirLink %}<a href ="/{{page.belongsto}}">\{{page.belongsto}}</a>{% endcapture %}
-                            {% endif %}
-                          {% endif %}
-                          <small>{{homelink}}{{dirLink}}{{currentPage}}</small>
-                        <h2>{{pagetitle_var}}</h2>
-                        {% if page.tags %}
-                          <small style="float:right;">tags: {{page.tags}}</small>
-                        {% endif %}
-                      </div>
-            {% endif %}
-
+            {% include page_title.html %}
 
             {{ content }}
 
             {% include footer.html %}
           </div>
   </body>
-
 </html>

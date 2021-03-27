@@ -1,22 +1,9 @@
 - name: powershell
   link: /powershell
-  subpage:
-    - name: index
-      link: /powershell
-    - name: Azure License Assignment Report
-      link: /powershell/get-azureUserLicenseToggle
-    - name: Installed Software Report
-      link: /powershell/get-InstalledSoftware
-    - name: Create Batch Users
-      link: /powershell/batchUserCreation
+  isparent: true
 - name: python
   link: /python
-  subpage:
-    - name: index
-      link: /python
-    - name: logmeIn lastOnline Report
-      link: /python/logmein_computer_lastonline
-    - name: python_project2
+  isparent: true
 - name: about
   link: /about
-
+  isparent: false

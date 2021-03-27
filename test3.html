@@ -1,0 +1,14 @@
+---
+layout: default
+title: test3
+---
+<br>
+{% assign powershell_pages = site.html_pages | where: "belongsto", "powershell"  %}
+{% for item in powershell_pages %}
+{% if item.path contains '.md' %}
+<br>
+THIS BS CONTAINS IT {{item.path}}
+{% assign newpath = item.path | remove: '.md' %}
+<p>this is the new path: {{newpath}}</p>
+{% endif %}
+{% endfor %}

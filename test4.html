@@ -1,0 +1,14 @@
+---
+layout: default
+title: test3
+---
+<br>
+
+{% assign highlight_pages = site.html_pages | where: "highlight", true  %}
+
+{% for item in highlight_pages %}
+    {{item.path}}
+    {{item.description}}
+    {{item.post_date}}
+    <br></br>
+{% endfor %}
