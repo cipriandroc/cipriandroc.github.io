@@ -1,9 +1,0 @@
-- name: powershell
-  link: /powershell
-  isparent: true
-- name: python
-  link: /python
-  isparent: true
-- name: about
-  link: /about
-  isparent: false

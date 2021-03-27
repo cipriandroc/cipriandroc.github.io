@@ -1,44 +1,45 @@
 <nav id="navbar" class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="/">{{site.title}}</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <!--  navbar menu items  -->
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto navbar-menu">
-        {% for item in site.data.navbar %}
-          {% assign item_subpages = nil %}
-          {% assign indexitem = nil %}
-          {% assign indexlink = nil %}
-          {% assign subitemlink = nil %}
-          
-          {% if item.isparent %}
-            {% assign item_subpages = site.html_pages | where: "belongsto", item.name | sort: "subitem_index" %}
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ item.name }}</a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                {% for subitem in item_subpages %}
-                  {% assign subitemlink = nil %}
-                  {% if subitem.type == 'index' %}
-                  {% assign indexitem = subitem %}
-                  {% assign indexlink = '/' | append: subitem.belongsto %}
-                  {% else %}
-                  {% assign subitemlink = subitem.path | remove: '.md' %}
-                  {% assign subitemlink = '/' | append: subitemlink %}
-                  <a class="dropdown-item" href="{{subitemlink}}">{{ subitem.title }}</a>
-                  {% endif %}
-                {% endfor %}
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="{{indexlink}}">index {{indexitem.title}}</a>
-              </div>
-            </li>
-          {% else %}
-            <li class="nav-item active">
-              <a class="nav-link" href="{{item.link}}">{{ item.name }} <span class="sr-only">(current)</span></a>
-            </li>
-          {% endif %}
-        {% endfor %}
-      </ul>
-      <button id="darkModeBtn" class="btn btn-dark" onclick="myFunction()"><i class="fas fa-adjust"></i></button>
-    </div>
+  <a class="navbar-brand" href="/">{{site.title}}</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <!--  navbar menu items  -->
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto navbar-menu">
+      {% assign navbar_items = site.html_pages | where: "navbar_item", true | sort: "navbar_index" %}
+      {% for item in navbar_items %}
+        {% assign item_subpages = nil %}
+        {% assign indexitem = nil %}
+        {% assign indexlink = nil %}
+        {% assign subitemlink = nil %}
+        
+        {% if item.isparent %}
+          {% assign item_subpages = site.html_pages | where: "belongsto", item.title | sort: "subitem_index" %}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">{{ item.title }}</a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              {% for subitem in item_subpages %}
+                {% assign subitemlink = nil %}
+                {% if subitem.type == 'index' %}
+                {% assign indexitem = subitem %}
+                {% assign indexlink = '/' | append: subitem.belongsto %}
+                {% else %}
+                {% assign subitemlink = subitem.path | remove: '.md' %}
+                {% assign subitemlink = '/' | append: subitemlink %}
+                <a class="dropdown-item" href="{{subitemlink}}">{{ subitem.title }}</a>
+                {% endif %}
+              {% endfor %}
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="{{indexlink}}">index {{indexitem.title}}</a>
+            </div>
+          </li>
+        {% else %}
+          <li class="nav-item active">
+            <a class="nav-link" href="{{item.path}}">{{ item.title }} <span class="sr-only">(current)</span></a>
+          </li>
+        {% endif %}
+      {% endfor %}
+    </ul>
+    <button id="darkModeBtn" class="btn btn-dark" onclick="myFunction()"><i class="fas fa-adjust"></i></button>
+  </div>
 </nav>
