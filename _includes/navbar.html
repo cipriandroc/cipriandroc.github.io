@@ -5,13 +5,14 @@
   </button>
   <!--  navbar menu items  -->
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto navbar-menu">
+    <ul class="navbar-nav mr-auto">
       {% assign navbar_items = site.html_pages | where: "navbar_item", true | sort: "navbar_index" %}
       {% for item in navbar_items %}
         {% assign item_subpages = nil %}
         {% assign indexitem = nil %}
         {% assign indexlink = nil %}
         {% assign subitemlink = nil %}
+        {% assign navitemlink = nil %}
         
         {% if item.isparent %}
           {% assign item_subpages = site.html_pages | where: "belongsto", item.title | sort: "subitem_index" %}
@@ -34,8 +35,9 @@
             </div>
           </li>
         {% else %}
+        {% assign navitemlink = '/' | append: item.path | remove: '.html' %}
           <li class="nav-item active">
-            <a class="nav-link" href="{{item.path}}">{{ item.title }} <span class="sr-only">(current)</span></a>
+            <a class="nav-link" href="{{navitemlink}}">{{ item.title }} <span class="sr-only">(current)</span></a>
           </li>
         {% endif %}
       {% endfor %}
