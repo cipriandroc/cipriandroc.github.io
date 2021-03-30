@@ -11,14 +11,14 @@ body {
 .Content {
 
 }
-.subcontent-wrapper {
+.subContent {
     margin: auto;
     width: 1440px;
     text-align:justify;
     overflow: visible;
 }
 @media only screen and (max-width: 1440px) {
-    div.subcontent-wrapper {
+    div.subContent {
       width: 95%;
     }
   }
@@ -69,15 +69,13 @@ a.article:hover {
     height:60px;
     text-align: center;
 }
-
-/* index specific */
-
 .page-title-wrapper {
     display: inline-block;
     padding-left: 100px;
     padding-top: 50px;
     padding-bottom: 50px;
 }
+/* index specific */
 .home-banner {
     background-image: url(/assets/img/homepage_highlight_snippet.png);
     height: 500px;
