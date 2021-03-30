@@ -8,11 +8,24 @@ body {
     background: #fafafa;
     height: 100%;
 }
+.Content {
+
+}
 .subcontent-wrapper {
     margin: auto;
-    width: 90%;
+    width: 1440px;
     text-align:justify;
     overflow: visible;
+}
+@media only screen and (max-width: 1440px) {
+    div.subcontent-wrapper {
+      width: 95%;
+    }
+  }
+@media only screen and (max-width: 700px) {
+    div.page-title-wrapper {
+        padding-left: 50px;
+    }
 }
 .featured-wrapper {
     margin: auto;
