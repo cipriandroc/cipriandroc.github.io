@@ -6,6 +6,7 @@ title: home
 <br>
 
 {% assign highlight_pages = site.html_pages | where: "highlight", true | sort: "highlight_index" %}
+<div class="indexContent">
 <div class="card-deck featured-wrapper">
   {% for item in highlight_pages  %}
     {% assign highlight_item_link = nil %}
@@ -24,5 +25,6 @@ title: home
       </div>
     </div>
   {% endfor %}
+</div>
 </div>
 <br>
