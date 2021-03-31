@@ -7,5 +7,5 @@ post_date:
 tags:
 description:
 highlight: false
-highlight_index:
+highlight_index: 
 ---
