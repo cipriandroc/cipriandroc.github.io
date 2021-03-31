@@ -18,8 +18,9 @@ body {
     padding-bottom: 50px;
 }
 .Content {
-    width: 100%;
     min-height: 100%;
+    width: 1600px;
+    margin: auto;
 }
 .subContent {
     margin: auto;
@@ -74,22 +75,26 @@ a.article:hover {
         padding-left: 50px;
     }
 }
+@media only screen and (max-width: 1630px) {
+    div.Content {
+        width: 97%;
+    }
+  }
 /* index specific */
 .home-banner {
     background-image: url(/assets/img/homepage_highlight_snippet.png);
     height: 500px;
     background-position: center;
     background-repeat: no-repeat;
+    /* make div break out of parent width */
+    left: 50%;
+	margin-left: -50vw;
+	margin-right: -50vw;
+	max-width: 100vw;
+	position: relative;
+	right: 50%;
+	width: 99.5vw;
 }
-.indexContent {
-    width: 1600px;
-    margin: auto;
-}
-@media only screen and (max-width: 1630px) {
-    div.indexContent {
-        width: 98%;
-    }
-  }
 /* index specific end*/
 /* transorm cards*/
 .card{
