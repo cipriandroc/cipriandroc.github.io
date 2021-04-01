@@ -1,0 +1,37 @@
+{% assign category_subpages = site.html_pages | where: "belongsto", page.title | sort: "subitem_index","last" %}
+{% assign subArraySize = 5 %}
+{% assign multiArray = "" | split: "/" %}
+
+{% for element in category_subpages %}
+  {% assign reminder = forloop.index | modulo: subArraySize %}
+  {% if reminder == 1 %}
+    {% assign subArray = "" | split: "/" %}
+  {% endif %}
+  {% assign subArray = subArray | push: element %}
+  {% if reminder == 0 or forloop.last %}
+    {% assign multiArray = multiArray | push: subArray %}
+  {% endif %}
+{% endfor %}
+
+{% for subArray in multiArray %}
+<div class="card-deck featured-wrapper">
+    {%for item in subArray %}
+        {% if item.type == 'index' %}
+            {% continue %}
+        {% endif %}
+        {% assign highlight_item_link = nil %}
+        {% assign highlight_item_link = item.path | remove: '.md' %}
+        {% assign highlight_item_link = '/' | append: highlight_item_link %}
+        <div class="card">
+          <div class="card-body">
+            <a href="{{highlight_item_link}}"><h5 class="card-title">{{ item.title }}</h5></a>
+            <p class="card-text">{{item.description | truncatewords: 10 }}</p>
+            <p class="card-text" style="line-height: 20px;">
+              <small class="text-muted">posted on: {{item.post_date}}</small><br>
+            </p>
+          </div>
+        </div>
+    {% endfor%}
+  </div>
+  <br>
+{% endfor %}

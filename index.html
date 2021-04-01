@@ -5,7 +5,7 @@ title: home
 <div class="home-banner"></div>
 <br>
 
-{% assign highlight_pages = site.html_pages | where: "highlight", true | sort: "highlight_index" %}
+{% assign highlight_pages = site.html_pages | where: "highlight", true | sort: "highlight_index","last" %}
 <div class="indexContent">
 <div class="card-deck featured-wrapper">
   {% for item in highlight_pages  %}

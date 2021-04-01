@@ -1,0 +1,38 @@
+---
+layout: default
+title: home
+---
+{% assign subArraySize = 3 %}
+
+{% assign myArray = "one,two,three,four,five,six,seven" | split: "," %}
+myArray = {{ myArray | inspect }}
+
+{% assign multiArray = "" | split: "/" %}
+multiArray = {{ multiArray | inspect }}
+
+{% for element in myArray %}
+  looping in myArray - forloop.index = {{ forloop.index }}
+
+  {% assign reminder = forloop.index | modulo: subArraySize %}
+  reminder : {{ reminder | inspect }}
+
+  {% if reminder == 1 %}
+  create a new empty sub array
+  {% assign subArray = "" | split: "/" %}
+  subArray = {{ subArray | inspect }}
+  {% endif %}
+
+  push current element in subArray
+  {% assign subArray = subArray | push: element %}
+  subArray = {{ subArray | inspect }}
+
+  {% if reminder == 0 or forloop.last %}
+  push subArray in multiArray if subarray length is
+    {% assign multiArray = multiArray | push: subArray %}
+  multiArray = {{ multiArray | inspect }}
+  {% endif %}
+{% endfor %}
+
+{% for subArray in multiArray %}
+ subArray :{{ subArray | inspect }}
+{% endfor %}
