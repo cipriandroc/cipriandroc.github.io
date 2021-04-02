@@ -9,6 +9,7 @@ tags: batch, user creation, ad
 description: Controller script to create batch AD user accounts based on a CSV file. It reports the results to a CSV file. Script has multiple checks in place for error prevention.
 highlight: true
 highlight_index: 2
+highlight_img: /assets/img/highlight_img/user_automation.png
 ---
 Let’s just start off with the results:
 {% highlight powershell %}
