@@ -11,18 +11,17 @@ title: new_cards
     
         {% assign highlight_item_link = item.path | remove: '.md' %}
         {% assign highlight_item_link = '/' | append: highlight_item_link %}
-    
+
         <div class="card">
-          <div class="card-body ">
+          <div class="card-body card-background-properties" style="background-image:url({{item.highlight_img}}) ;"   >
             <a href="{{highlight_item_link}}"><h5 class="card-title">{{ item.title }}</h5></a>
-            <p class="card-text">{{item.description}}</p>
+            <p class="card-text"><span>{{item.description}}</span></p>
             <p class="card-text" style="line-height: 20px;">
               <small class="text-muted">posted on: {{item.post_date}}</small><br>
               <small class="text-muted">category: {{item.belongsto}}</small>
             </p>
-            <div class="divimg"><img src="{{item.highlight_img}}" alt="" /></div>
           </div>
         </div>
       {% endfor %}
     </div>
-    </div>
+</div>

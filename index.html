@@ -7,24 +7,25 @@ title: home
 
 {% assign highlight_pages = site.html_pages | where: "highlight", true | sort: "highlight_index","last" %}
 <div class="indexContent">
-<div class="card-deck featured-wrapper">
-  {% for item in highlight_pages  %}
-    {% assign highlight_item_link = nil %}
+  <div class="card-deck featured-wrapper">
+    {% for item in highlight_pages  %}
+      {% assign highlight_item_link = nil %}
+  
+      {% assign highlight_item_link = item.path | remove: '.md' %}
+      {% assign highlight_item_link = '/' | append: highlight_item_link %}
 
-    {% assign highlight_item_link = item.path | remove: '.md' %}
-    {% assign highlight_item_link = '/' | append: highlight_item_link %}
-
-    <div class="card">
-      <div class="card-body">
-        <a href="{{highlight_item_link}}"><h5 class="card-title">{{ item.title }}</h5></a>
-        <p class="card-text">{{item.description}}</p>
-        <p class="card-text" style="line-height: 20px;">
-          <small class="text-muted">posted on: {{item.post_date}}</small><br>
-          <small class="text-muted">category: {{item.belongsto}}</small>
-        </p>
+      <div class="card">
+        <div class="card-body card-background-properties" style="background-image:url({{item.highlight_img}}) ;"   >
+          <a href="{{highlight_item_link}}"><h5 class="card-title">{{ item.title }}</h5></a>
+          <p class="card-text"><span>{{item.description}}</span></p>
+          <p class="card-text" style="line-height: 20px;">
+            <small class="text-muted">posted on: {{item.post_date}}</small><br>
+            <small class="text-muted">category: {{item.belongsto}}</small>
+          </p>
+        </div>
       </div>
-    </div>
-  {% endfor %}
+    {% endfor %}
+  </div>
 </div>
-</div>
+
 <br>

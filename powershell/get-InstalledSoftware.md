@@ -9,7 +9,7 @@ tags: installed software, search, report
 description: Controller script that reports installed software on target machine (local or remote), accepts parameters for software name, target machine, export location.
 highlight: true
 highlight_index: 3
-highlight_img: /assets/img/highlight_img/software.png
+highlight_img: /assets/img/highlight_img/software_transparent.png
 ---
 
 this was created from a need one day to determine if a certain package version was deployed to a pool of workstations.
