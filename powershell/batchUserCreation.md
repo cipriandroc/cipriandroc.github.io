@@ -10,6 +10,7 @@ description: Controller script to create batch AD user accounts based on a CSV f
 highlight: true
 highlight_index: 2
 highlight_img: /assets/img/highlight_img/user_automation_transparent.png
+livemode: true
 ---
 Let’s just start off with the results:
 {% highlight powershell %}

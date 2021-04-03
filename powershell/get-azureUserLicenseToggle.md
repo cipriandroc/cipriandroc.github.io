@@ -10,6 +10,7 @@ description: Reports o365 licenses assigned to users. Provide a list of user nam
 highlight: true
 highlight_index: 1
 highlight_img: /assets/img/highlight_img/report_transparent.png
+livemode: true
 ---
 
 <https://github.com/cipriandroc/Get-AzureUserLicenseToggleDetails.ps1>

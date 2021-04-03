@@ -10,7 +10,49 @@ description: Controller script that reports installed software on target machine
 highlight: true
 highlight_index: 3
 highlight_img: /assets/img/highlight_img/software_transparent.png
+livemode: true
 ---
+Purpose of this script is to output information regarding installed software on the local computer or remote computers. It has the ability to output on screen as well as export to a CSV file.
+
+Let’s start off with the basics
+{% highlight powershell %}
+PS C:\Users\cdroc-a\Documents\GitHub\Get-InstalledSoftware.ps1P .\Get-InstalledSoftware.ps1 edge
+ComputerName    method      searched   DisplayName             DisplayVersion       ApplicationGUID         InstallOate 
+ORBI7450        registry    edge       Microsoft Edge          85.8.564.51          Microsoft Edge          9/19/2020 
+ORBI7450        registry    edge       Microsoft Edge Update   1.3.135.29           Microsoft Edge Update 
+ORBI7450        get-package edge       Microsoft Edge          85.8.564.51                                  N/A 
+ORBI7450        get-package edge       Microsoft Edge Update   1.3.135.29                                   N/A 
+{% endhighlight %}
+Pretty simple, run the script, input the search term as a positional parameter and get the results. Let’s discuss the results and the layout.
+We’ll start off one by one.
+
+`ComputerName`: since this script can retrieve information from multiple computers using the parameter -ComputerName it also outputs the name of the computer it ran the query on. This is very useful when the tool is used for reporting.
+
+`method`: Since there’s no sure way of getting installed software information I’m using the 2 best methods to retrieve it. One is registry where we have the keys for installed software, this is the exact information that’s being displayed in control panel / appwiz.cpl . There’s a catch though, they’re stored in 2 locations in registry: one for 32bit and another for 64bit. The script retrieves information from both locations and concatenates the information. The downside to retrieving information from registry is that it might not be accurate. You can easily delete the key and the application would continue to function normally as it’s not impacted. It also depeneds on the developer how well they built their installer, there could be apps that won’t add anything to registry. Come in the second method using the cmdlet get-package builtin Powershell. This will retrieve the software you input in a similar fashion this script behaves, bar quering remote computers and reporting. The biggest downside to it is that it won’t output the install date, so it would hinder the reporting capabilities.
+<div style="background-color:#FFFFE0;line-height:1;">
+<small>
+LaterEdit: I actually did find the object produced has a InstallDate value, it’s nested very deep into one of the properties: get-package *chrome* | Select-Object -expand meta | select -expand attributes | select -expand values. For the sake of showing my knowledge at the time, I won’t modify this article further
+There’s still point to all of this though. As of now (9.11.20) I didn’t extract the date yet as I just found out and basically you have to match the right value found in the Values property to it’s Key counterpart found in the Key property. I have a guess that you can match the position and I will work on that, however, there’s another major factor. In Powershell (Core) 7 Get-Package doesn’t support the Programs and Msi providers https://github.com/PowerShell/PowerShell/issues/7844
+This enforces a reason to have both options available for redundancy.
+</small>
+</div>
+
+Since these two methods compliment eachother I decided to use both, more information is always better than less so we’re making sure we’re not missing out on anything.
+
+`searched`: as the name suggests, this is the search term that generated the output on that specific line, to easily track the results. The -software parameter accepts multiple items separated by commas
+
+`DisplayName`, `DisplayVersion`, `Application GUID`, `InstallDate`: as the name suggests, these are the default property names queried from registry. The cmdlet get-package outputs slightly different and less information so I used a calculated property selection to manipulate the results into using the same property name and thus output in the same columns. I decided to output the GUID just for the convenience in case you’re trying to uninstall an application based on its GUID. Instead of having to go look it up you have a one stop place for it.
+
+<img src="https://cipriandroc.files.wordpress.com/2020/09/screen-shot-2020-09-13-at-7.13.32-pm.png">
+
+<img src="https://cipriandroc.files.wordpress.com/2020/09/screen-shot-2020-09-13-at-7.14.54-pm.png">
+
+Onto a more advanced output. This one had 3 search terms, 2 computers and the parameter to export results to a location.
+
+The script has a builtin function to export a csv file. It takes -results, -exportlocation and -filename parameters. Basically you either input an export location or chose a predefined one eg. c:\data\output . The script itself already has -filename declared inside of it as ‘SoftwareReport’, it’s hardcoded as the name is self descriptive of the output. Then the function builds itself the entire location path along with the CSV filename, it adds the date in the filename eg. 08.30_SoftwareReport.csv . The function also checks if the path exists and sends out an error if it’s not accessible and lists the path so you can view what was input. If the path exists then it proceeds to export as CSV with the parameters: append and notypeinformation hard coded. Append is needed as the software lookup function is using a foreach to search and output so it keeps adding to the CSV. Notypeinformation is simply because there’s no need to view the object time in the CSV and just get the columns directly.
+The results parameter is the data going into the function, it was meant to be descriptive and self explenatory as the script
+
+### BuildLog - notes
 
 this was created from a need one day to determine if a certain package version was deployed to a pool of workstations.
 
