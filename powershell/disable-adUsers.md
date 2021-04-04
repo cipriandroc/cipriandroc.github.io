@@ -11,6 +11,12 @@ highlight: true
 highlight_index: 1
 highlight_img:
 livemode: true
+related_articles: 
+  - get-inactiveADUser 
+  - convertEmailAddressToADUser
+  - convertDisplayNameToADUser
+  - convertFirstNameLastNameToDisplayName
+github_link: placeholder
 ---
 <script>
 function range(start, end) {
@@ -31,13 +37,7 @@ async function toggle() {
   }
 }
 </script>
-<div>
-  <h5>Related articles</h5>
-  <a href="#"><small>get inactive ADUser</small></a><span> | </span>
-  <a href="#"><small>convert email address to ADUser</small></a><span> | </span>
-  <a href="#"><small>convert DisplayName to ADUser</small></a><span> | </span>
-  <a href="#"><small>convert FirstName LastName to DisplayName</small></a>
-</div>
+
 <hr>
 <h5>Description</h5>
 <hr>
@@ -58,16 +58,68 @@ The structure of it is made out of:
 - initialization (performs safetynet checks)
 - classes and functions
 - script block
-
+<hr>
+<h5>Configuration</h5>
+<hr>
 When running this script in a new environment make sure to configure the variables. After it's been configured with the right values the script can be run from the console requiring minimal input.
+
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">variable name</th>
+      <th scope="col">description</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for variable in site.data.powershell.disable-adUsers_variableTable %}
+      {% assign link_button = nil %}
+      {% if variable.link_id %}
+        {% assign link_button = '(<a href="#' | append: variable.link_id   | append: '" style="color:blue">' | append: 'more info' | append: '</a>)' %}
+      {% endif %}
+      <tr>
+        <td><code class="language-plaintext highlighter-rouge" style="word-break:unset;">{{variable.name}}</code></td>
+        <td>{{variable.description}} {{link_button}}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+</table>
+
+<hr>
+<h5>Execution</h5>
+<hr>
+At runtime the script will perform the following checks and stop in case any of them fail and provide console information:
+- imports the userlist CSV file
+- checks if the provided CSV file contains the samAccountName header
+- tests the provided export location folder if exists
+
+Below is a part of the console display information at runtime:
+{% highlight powershell %}
+\> .\Disable-ADUsers.ps1 -ticketNumber HD-485
+VERBOSE: Attempting to import userdata file .\userlist.csv
+VERBOSE: Succesfully imported userdata file.
+VERBOSE: Gathering user data for: adelev
+VERBOSE: Backing up user data to file: 4.3.2021_backupUserData.txt
+VERBOSE: Attempting to change description filed for user: adelev
+VERBOSE: [ adelev ] succesfully changed description to 'Disabled Per - HD-485'
+Changed description to: Disabled Per - HD-485
+VERBOSE: Attempting to disable user: adelev
+VERBOSE: [ adelev ] has been disabled.
+adelev has been disabled.
+VERBOSE: Exporting disable information to file
+VERBOSE: Gathering user data for: awilber
+VERBOSE: Backing up user data to file: 4.3.2021_backupUserData.txt
+VERBOSE: Attempting to change description filed for user: awilber
+VERBOSE: [ awilber ] succesfully changed description to 'Disabled Per - HD-485'
+Changed description to: Disabled Per - HD-485
+{% endhighlight %}
 <hr>
 <h5>Output</h5>
 <hr>
 This is a sample of the CSV exported (`4.3.2021_disableReport.csv`)
 
-<a href="#" onclick="toggle()" style="color:black; float:right; margin:auto;">`[ expand table ]`</a>
-
-<table class="table">
+<!-- table block -->
+<a href="#" onclick="toggle(); return false;" style="color:black; float:right; margin:auto;">`[ expand table ]`</a>
+<table class="table" id="csvOutput">
   <thead>
     <tr>
       <th scope="col">#</th>
@@ -99,10 +151,11 @@ This is a sample of the CSV exported (`4.3.2021_disableReport.csv`)
 
 Next is a sample of the backup user data that appends to the output text file (`4.3.2021_backupUserData.txt`)<br>
 It's all of the adusers's properties before any action is being taken, just in case it needs to be referenced or reverted.
-<a href="#" onclick="interpret_toggle('backup_user_data_export')" style="color:black">`[ show txt file ]`</a>
+<a href="#" onclick="interpret_toggle('backup_user_data_export'); return false;" style="color:black" id="userBackupExport">`[ show txt file ]`</a>
+<!-- text block -->
 <div id="backup_user_data_export" style="display:none;">
 {% highlight powershell %}
 {% include /powershell_props/disable-adUsers_props/backup.txt %}
 {% endhighlight %}
-<a href="#" onclick="interpret_toggle('backup_user_data_export')" style="color:black">[ hide txt file ]</a>
+<a href="#" onclick="interpret_toggle('backup_user_data_export'); return false;" style="color:black">[ hide txt file ]</a>
 </div>

@@ -1,0 +1,13 @@
+{% if page.related_articles %}
+  <div>
+    <hr>
+    <h5>Related articles</h5>
+    <hr>
+    {% for article in page.related_articles %}
+      <a href="#"><small>{{article}}</small></a>
+      {% unless forloop.last %}
+        <span><small> | </small></span>
+      {% endunless %}
+    {% endfor %}
+  </div>
+{% endif %}
