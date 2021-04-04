@@ -7,6 +7,8 @@ title: home
 
 {% assign highlight_pages = site.html_pages | where: "highlight", true | sort: "highlight_index","last" %}
 <div class="indexContent">
+<h5>Featured content</h5>
+<hr>
   <div class="card-deck featured-wrapper">
     {% for item in highlight_pages  %}
       {% assign highlight_item_link = nil %}

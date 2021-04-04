@@ -10,6 +10,7 @@ description: Controller script that reports installed software on target machine
 highlight: true
 highlight_index: 4
 highlight_img: /assets/img/highlight_img/software_transparent.png
+github_link: https://github.com/cipriandroc/Get-InstalledSoftware.ps1
 ---
 Purpose of this script is to output information regarding installed software on the local computer or remote computers. It has the ability to output on screen as well as export to a CSV file.
 

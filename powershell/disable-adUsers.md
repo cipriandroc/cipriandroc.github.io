@@ -72,11 +72,11 @@ When running this script in a new environment make sure to configure the variabl
     {% for variable in site.data.powershell.disable-adUsers_variableTable %}
       {% assign link_button = nil %}
       {% if variable.link_id %}
-        {% assign link_button = '(<a href="#' | append: variable.link_id   | append: '" style="color:blue">' | append: 'more info' | append: '</a>)' %}
+        {% assign link_button = ' (<a href="#' | append: variable.link_id   | append: '" style="color:blue">' | append: 'more info' | append: '</a>)' %}
       {% endif %}
       <tr>
         <td><code class="language-plaintext highlighter-rouge" style="word-break:unset;">{{variable.name}}</code></td>
-        <td>{{variable.description}} {{link_button}}</td>
+        <td>{{variable.description}}{{link_button}}</td>
       </tr>
     {% endfor %}
   </tbody>
