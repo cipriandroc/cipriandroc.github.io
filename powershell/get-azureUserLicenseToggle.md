@@ -8,9 +8,8 @@ post_date: 09.05.2020
 tags: o365, azure, license, report
 description: Reports o365 licenses assigned to users. Provide a list of user names and the results are exported to a CSV file.
 highlight: true
-highlight_index: 1
+highlight_index: 2
 highlight_img: /assets/img/highlight_img/report_transparent.png
-livemode: true
 ---
 
 <https://github.com/cipriandroc/Get-AzureUserLicenseToggleDetails.ps1>

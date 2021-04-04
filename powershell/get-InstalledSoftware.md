@@ -8,9 +8,8 @@ post_date: 08.30.2020
 tags: installed software, search, report
 description: Controller script that reports installed software on target machine (local or remote), accepts parameters for software name, target machine, export location.
 highlight: true
-highlight_index: 3
+highlight_index: 4
 highlight_img: /assets/img/highlight_img/software_transparent.png
-livemode: true
 ---
 Purpose of this script is to output information regarding installed software on the local computer or remote computers. It has the ability to output on screen as well as export to a CSV file.
 
