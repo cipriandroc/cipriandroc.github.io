@@ -31,13 +31,15 @@ async function toggle() {
   }
 }
 </script>
-
+<p>
 This script disables ADUsers based on an input list (csv) containing samAccountName values.
 It also changes the description of the targeted user/s, has the ability to move OU to designated Disable OU and most importantly backs up user data to a text file before it performs any action on the targeted user.
-
+</p>
+<p>
 Finally it will output a report of user properties after action is performed and lists action taken on the account.
 Through the course of runtime it will display detailed information on the console for every action being performed.
-
+</p>
+<p>
 There are a couple of safety nets put in place to prevent the script from running if any important parameter has been omitted or if list provided has invalid formatting.
 
 This script was run multiple times in production and it performed up to expectations.
@@ -52,7 +54,8 @@ The structure of it is made out of:
 When running this script in a new environment make sure to configure the variables. After it's been configured with the right values the script can be run from the console requiring minimal input.
 
 This is a sample of a CSV output:
-<button onclick="toggle()">click here to show full csv result</button>
+</p>
+<button onclick="toggle()" class="btn btn-secondary btn-sm">click here to show full csv result</button>
 
 <table class="table">
   <thead>

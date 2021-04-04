@@ -25,7 +25,11 @@
                   {% assign indexitem = subitem %}
                   {% assign indexlink = '/' | append: subitem.belongsto %}
                   {% else %}
-                  {% assign subitemlink = subitem.path | remove: '.md' %}
+                    {% if subitem.path contains '.md' %}
+                      {% assign subitemlink = subitem.path | remove: '.md' %}
+                    {% elsif subitem.path contains '.html' %}
+                      {% assign subitemlink = subitem.path | remove: '.html' %}
+                    {% endif %}
                   {% assign subitemlink = '/' | append: subitemlink %}
                   <a class="dropdown-item" href="{{subitemlink}}">{{ subitem.title }}</a>
                 {% endif %}
