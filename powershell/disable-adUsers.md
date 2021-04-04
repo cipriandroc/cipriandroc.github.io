@@ -13,9 +13,7 @@ highlight_img:
 livemode: true
 related_articles: 
   - get-inactiveADUser 
-  - convertEmailAddressToADUser
-  - convertDisplayNameToADUser
-  - convertFirstNameLastNameToDisplayName
+  - convert read data to ADUser
 github_link: placeholder
 ---
 <script>
@@ -93,8 +91,9 @@ At runtime the script will perform the following checks and stop in case any of 
 - tests the provided export location folder if exists
 
 Below is a part of the console display information at runtime:
+
 {% highlight powershell %}
-\> .\Disable-ADUsers.ps1 -ticketNumber HD-485
+> .\Disable-ADUsers.ps1 -ticketNumber HD-485
 VERBOSE: Attempting to import userdata file .\userlist.csv
 VERBOSE: Succesfully imported userdata file.
 VERBOSE: Gathering user data for: adelev
@@ -112,6 +111,7 @@ VERBOSE: Attempting to change description filed for user: awilber
 VERBOSE: [ awilber ] succesfully changed description to 'Disabled Per - HD-485'
 Changed description to: Disabled Per - HD-485
 {% endhighlight %}
+
 <hr>
 <h5>Output</h5>
 <hr>
@@ -159,3 +159,14 @@ It's all of the adusers's properties before any action is being taken, just in c
 {% endhighlight %}
 <a href="#" onclick="interpret_toggle('backup_user_data_export'); return false;" style="color:black">[ hide txt file ]</a>
 </div>
+
+<hr>
+<h5>the Logic</h5>
+<hr>
+
+After defining the runtime variables in the beggining we define a user oject class and the three functions that perform the actions on the user. One function sets the description another disables the user and finally one that moves the user to another OU. 
+
+All of these functions have `Try{}`, `Catch{}` blocks. They account for errors such as insufficient privileages and return a message and a success code that goes through a separate function that writes the output information as pass or fail. Pass shows as green in the console, fail shows as a Warning message. 
+These functions provide verbose information on the action that's about to be performed.
+
+Finally we move onto a for loop that goes through the provided user list, backs up the user info to the text file, performs the action and then exports the results.

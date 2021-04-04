@@ -1,6 +1,6 @@
 - 
   name: $ticketNumber
-  description: set your desired description here, this will be placed in every users Description field and it concatenates the input ticket number at runtime
+  description: set your desired description here, this will be appended to every users Description field (preserving existing string) and it concatenates the input ticket number at runtime
 - 
   name: $importDataFile
   description: provide a CSV file that has the column header samAccountName followed by the usernames being targeted
