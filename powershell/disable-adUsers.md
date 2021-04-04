@@ -33,7 +33,7 @@ async function toggle() {
 </script>
 <div>
   <h5>Related articles</h5>
-  <a href="#"><small>get inncative ADUser</small></a><span> | </span>
+  <a href="#"><small>get inactive ADUser</small></a><span> | </span>
   <a href="#"><small>convert email address to ADUser</small></a><span> | </span>
   <a href="#"><small>convert DisplayName to ADUser</small></a><span> | </span>
   <a href="#"><small>convert FirstName LastName to DisplayName</small></a>
@@ -60,6 +60,7 @@ The structure of it is made out of:
 - script block
 
 When running this script in a new environment make sure to configure the variables. After it's been configured with the right values the script can be run from the console requiring minimal input.
+<hr>
 <h5>Output</h5>
 <hr>
 This is a sample of the CSV exported (`4.3.2021_disableReport.csv`)
