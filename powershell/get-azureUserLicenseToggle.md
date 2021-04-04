@@ -12,8 +12,10 @@ highlight_index: 2
 highlight_img: /assets/img/highlight_img/report_transparent.png
 ---
 
-<https://github.com/cipriandroc/Get-AzureUserLicenseToggleDetails.ps1>
-
+<a href="https://github.com/cipriandroc/Get-AzureUserLicenseToggleDetails.ps1" style="background-color:#1E90FF; color:#fff;">
+https://github.com/cipriandroc/Get-AzureUserLicenseToggleDetails.ps1
+</a>
+<br>
 This script was created to report Office365 User License assigments. It’s purpose is to capture the license assignments to users wether it’s needed for reporting or before a major change such as perhaps switching to an Azure Group that has default assigments.
 The script displays a breakdown of all the license object IDs along with their Sublicenses and their status.
 By default the command Get-AzureADUserLicenseDetail takes an ObjectID parameter and returns licenses along with their sublicenses as a sub array. It makes it difficult to export to an easy readable format.

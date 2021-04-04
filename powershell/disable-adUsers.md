@@ -31,7 +31,16 @@ async function toggle() {
   }
 }
 </script>
-
+<div>
+  <h5>Related articles</h5>
+  <a href="#"><small>get inncative ADUser</small></a><span> | </span>
+  <a href="#"><small>convert email address to ADUser</small></a><span> | </span>
+  <a href="#"><small>convert DisplayName to ADUser</small></a><span> | </span>
+  <a href="#"><small>convert FirstName LastName to DisplayName</small></a>
+</div>
+<hr>
+<h5>Description</h5>
+<hr>
 This script `disables` ADUsers based on an input list (csv) containing samAccountName values.
 It also `changes the description` of the targeted user/s, has the ability to `move OU` to designated Disable OU and most importantly `backs up user data` to a text file before it performs any action on the targeted user/
 
@@ -51,8 +60,11 @@ The structure of it is made out of:
 - script block
 
 When running this script in a new environment make sure to configure the variables. After it's been configured with the right values the script can be run from the console requiring minimal input.
+<h5>Output</h5>
+<hr>
+This is a sample of the CSV exported (`4.3.2021_disableReport.csv`)
 
-This is a sample of the CSV (`4.3.2021_disableReport.csv`) output <button onclick="toggle()" class="btn btn-secondary btn-sm">click here to show full csv result</button>
+<a href="#" onclick="toggle()" style="color:black; float:right; margin:auto;">`[ expand table ]`</a>
 
 <table class="table">
   <thead>
@@ -67,7 +79,7 @@ This is a sample of the CSV (`4.3.2021_disableReport.csv`) output <button onclic
   </thead>
   <tbody>
     {% assign i = 1 %}
-    {% for user in site.data.disable-adUsers_csvResult %}
+    {% for user in site.data.powershell.disable-adUsers_csvResult %}
     {% if i > 3 %}
       {% assign hide_tb_row = 'id="hidethis' | append: i | append: '"' | append: ' style="display:none;"' | append: ' class="set-transition"'%}
     {% endif %}
@@ -84,121 +96,12 @@ This is a sample of the CSV (`4.3.2021_disableReport.csv`) output <button onclic
   </tbody>
 </table>
 
-Below is a sample of the backup user data that appends to the output text file (`4.3.2021_backupUserData.txt`):<br>
+Next is a sample of the backup user data that appends to the output text file (`4.3.2021_backupUserData.txt`)<br>
 It's all of the adusers's properties before any action is being taken, just in case it needs to be referenced or reverted.
-<button onclick="interpret_toggle('backup_user_data_export')" class="btn btn-secondary btn-sm">expand txt file</button>
+<a href="#" onclick="interpret_toggle('backup_user_data_export')" style="color:black">`[ show txt file ]`</a>
 <div id="backup_user_data_export" style="display:none;">
 {% highlight powershell %}
-AccountExpirationDate                : 
-accountExpires                       : 9223372036854775807
-AccountLockoutTime                   : 
-AccountNotDelegated                  : False
-AllowReversiblePasswordEncryption    : False
-AuthenticationPolicy                 : {}
-AuthenticationPolicySilo             : {}
-BadLogonCount                        : 0
-badPasswordTime                      : 0
-badPwdCount                          : 0
-CannotChangePassword                 : False
-CanonicalName                        : orbi.home/_M365x565000.onmicrosoft.com/users/Adele Vance
-Certificates                         : {}
-City                                 : 
-CN                                   : Adele Vance
-codePage                             : 0
-Company                              : 
-CompoundIdentitySupported            : {}
-Country                              : 
-countryCode                          : 0
-Created                              : 2/27/2021 5:33:26 PM
-createTimeStamp                      : 2/27/2021 5:33:26 PM
-Deleted                              : 
-Department                           : 
-Description                          : 
-DisplayName                          : Adele Vance
-DistinguishedName                    : CN=Adele Vance,OU=users,OU=_M365x565000.onmicrosoft.com,DC=orbi,DC=home
-Division                             : 
-DoesNotRequirePreAuth                : False
-dSCorePropagationData                : {2/27/2021 8:07:22 PM, 12/31/1600 4:00:00 PM}
-EmailAddress                         : AdeleV@M365x565000.OnMicrosoft.com
-EmployeeID                           : 
-EmployeeNumber                       : 
-Enabled                              : True
-Fax                                  : 
-GivenName                            : Adele
-HomeDirectory                        : 
-HomedirRequired                      : False
-HomeDrive                            : 
-HomePage                             : 
-HomePhone                            : 
-Initials                             : 
-instanceType                         : 4
-isDeleted                            : 
-KerberosEncryptionType               : {}
-LastBadPasswordAttempt               : 
-LastKnownParent                      : 
-lastLogoff                           : 0
-lastLogon                            : 0
-LastLogonDate                        : 
-LockedOut                            : False
-logonCount                           : 0
-LogonWorkstations                    : 
-mail                                 : AdeleV@M365x565000.OnMicrosoft.com
-Manager                              : 
-MemberOf                             : {CN=Ask HR,OU=groups,OU=_M365x565000.onmicrosoft.com,DC=orbi,DC=home, 
-                                       CN=Operations,OU=groups,OU=_M365x565000.onmicrosoft.com,DC=orbi,DC=home, 
-                                       CN=Leadership,OU=groups,OU=_M365x565000.onmicrosoft.com,DC=orbi,DC=home}
-MNSLogonAccount                      : False
-MobilePhone                          : 
-Modified                             : 2/27/2021 6:28:10 PM
-modifyTimeStamp                      : 2/27/2021 6:28:10 PM
-mS-DS-ConsistencyGuid                : {137, 145, 42, 112...}
-msDS-User-Account-Control-Computed   : 0
-Name                                 : Adele Vance
-nTSecurityDescriptor                 : System.DirectoryServices.ActiveDirectorySecurity
-ObjectCategory                       : CN=Person,CN=Schema,CN=Configuration,DC=orbi,DC=home
-ObjectClass                          : user
-ObjectGUID                           : 702a9189-219f-4cf8-bfc2-1616a6e0de63
-objectSid                            : S-1-5-21-3974584507-216888213-1680076431-6169
-Office                               : 
-OfficePhone                          : +1 425 555 0109
-Organization                         : 
-OtherName                            : 
-PasswordExpired                      : False
-PasswordLastSet                      : 2/27/2021 5:33:26 PM
-PasswordNeverExpires                 : False
-PasswordNotRequired                  : False
-POBox                                : 
-PostalCode                           : 
-PrimaryGroup                         : CN=Domain Users,CN=Users,DC=orbi,DC=home
-primaryGroupID                       : 513
-PrincipalsAllowedToDelegateToAccount : {}
-ProfilePath                          : 
-ProtectedFromAccidentalDeletion      : False
-pwdLastSet                           : 132589496065143380
-SamAccountName                       : AdeleV
-sAMAccountType                       : 805306368
-ScriptPath                           : 
-sDRightsEffective                    : 15
-ServicePrincipalNames                : {}
-SID                                  : S-1-5-21-3974584507-216888213-1680076431-6169
-SIDHistory                           : {}
-SmartcardLogonRequired               : False
-sn                                   : Vance
-State                                : 
-StreetAddress                        : 
-Surname                              : Vance
-telephoneNumber                      : +1 425 555 0109
-Title                                : 
-TrustedForDelegation                 : False
-TrustedToAuthForDelegation           : False
-UseDESKeyOnly                        : False
-userAccountControl                   : 512
-userCertificate                      : {}
-UserPrincipalName                    : AdeleV@orbi.home
-uSNChanged                           : 1121427
-uSNCreated                           : 1121214
-whenChanged                          : 2/27/2021 6:28:10 PM
-whenCreated                          : 2/27/2021 5:33:26 PM
+{% include /powershell_props/disable-adUsers_props/backup.txt %}
 {% endhighlight %}
-<button onclick="interpret_toggle('backup_user_data_export')" class="btn btn-secondary btn-sm">hide txt file</button>
+<a href="#" onclick="interpret_toggle('backup_user_data_export')" style="color:black">[ hide txt file ]</a>
 </div>
