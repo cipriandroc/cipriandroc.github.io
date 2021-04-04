@@ -42,7 +42,7 @@ async function toggle() {
 <h5>Description</h5>
 <hr>
 This script `disables` ADUsers based on an input list (csv) containing samAccountName values.
-It also `changes the description` of the targeted user/s, has the ability to `move OU` to designated Disable OU and most importantly `backs up user data` to a text file before it performs any action on the targeted user/
+It also `changes the description` of the targeted user/s, has the ability to `move OU` to designated Disable OU and most importantly `backs up user data` to a text file before it performs any action on the targeted user.
 
 Finally it will `export a report` of user properties after action is performed and lists action taken on the accounts.
 Through the course of runtime it will `display detailed information` on the console for every action being performed.
