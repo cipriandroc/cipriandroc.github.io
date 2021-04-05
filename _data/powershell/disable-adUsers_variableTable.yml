@@ -23,7 +23,7 @@
   description: desired OU to move the users to
 -
   name: $targetDomain
-  description: Specific domain the script is supposed to run against. With multiple domain forests in mind, this prevents the Script running in the current logged in domain if it doesn't match the specified domain name. (To make sure you get the right domain run this command (((Get-ADDomainController).domain).split('.'))[0] )
+  description: Specific domain the script is supposed to run against. With multiple domain forests in mind, this prevents the Script running in the current logged in domain if it doesn't match the specified domain name. (To make sure you get the right domain run this command (Get-ADDomainController).Domain.Split('.')[0] )
 -
   name: $VerbosePreference
   description: set to Continue, this means that console shows Verbose information without requiring the need to include the parameter. I feel it's important to view more information than not, to the point that this shows vital information on action taken and it's easy to overlook the parameter -Verbose when running it
