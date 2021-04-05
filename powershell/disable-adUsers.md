@@ -161,12 +161,7 @@ It's all of the adusers's properties before any action is being taken, just in c
 </div>
 
 <hr>
-<h5>the Logic</h5>
+<h5>Logic Diagram</h5>
 <hr>
 
-After defining the runtime variables in the beggining we define a user oject class and the three functions that perform the actions on the user. One function sets the description another disables the user and finally one that moves the user to another OU. 
-
-All of these functions have `Try{}`, `Catch{}` blocks. They account for errors such as insufficient privileages and return a message and a success code that goes through a separate function that writes the output information as pass or fail. Pass shows as green in the console, fail shows as a Warning message. 
-These functions provide verbose information on the action that's about to be performed.
-
-Finally we move onto a for loop that goes through the provided user list, backs up the user info to the text file, performs the action and then exports the results.
+<img src="/assets/img/disable-adUsers_img/flowchart.svg" style="size:100%;">
