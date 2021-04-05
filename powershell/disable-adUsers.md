@@ -14,7 +14,7 @@ livemode: true
 related_articles: 
   - get-inactiveADUser 
   - convert read data to ADUser
-github_link: placeholder
+github_link: github link placeholder
 ---
 <script>
 function range(start, end) {
