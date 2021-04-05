@@ -56,6 +56,8 @@ The structure of it is made out of:
 - initialization (performs safetynet checks)
 - classes and functions
 - script block
+
+`Logic Diagram` will show detailed information on this subject. <a href="#logic_diagram" style="color:black;">`[ view now ]`</a>
 <hr>
 <h5>Configuration</h5>
 <hr>
@@ -161,7 +163,7 @@ It's all of the adusers's properties before any action is being taken, just in c
 </div>
 
 <hr>
-<h5>Logic Diagram</h5>
+<h5 id="logic_diagram">Logic Diagram</h5>
 <hr>
 
 <img src="/assets/img/disable-adUsers_img/flowchart.svg" style="size:100%;">
