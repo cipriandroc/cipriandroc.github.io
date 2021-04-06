@@ -1,0 +1,53 @@
+- 
+  name: -ticketNumber
+  description: (mandatory)[string] input related ticket number. This will be appended to $ticketNumber string and form the Description for the disabled users
+  type: parameter
+- 
+  name: -moveOU
+  description: (optional)[switch] if this parameter is specified when a user is disabled it will be moved to the specified disableOU variable that's specified in the script. If user is already disabled this will not perform the move.
+  type: parameter
+- 
+  name: -forceMoveOU
+  description: (optional)[switch] use this parameter when you want to move the users to the disabled OU regardless of being disabled or not 
+  type: parameter
+
+
+
+- 
+  name: $ticketNumber
+  description: set your desired description here, this will be appended to every users Description field (preserving existing string) and it concatenates the -ticketNumber parameter provided when running script from console
+  type: variable
+- 
+  name: $importDataFile
+  description: provide a CSV file that has the column header samAccountName followed by the usernames being targeted
+  type: variable
+-
+  name: $date
+  description: the output files will contain the runtime date
+  type: variable
+-
+  name: $exportLocation
+  description: the location for the export folder, this will be used for the exported data, make sure the folder exists
+  type: variable
+-
+  name: $exportBackupUserData
+  description: text file where backup user information is being appended before any change is performed
+  link_id: userBackupExport
+  type: variable
+-
+  name: $exportLog
+  description: CSV file that shows script results
+  link_id: csvOutput
+  type: variable
+-
+  name: $disableOU
+  description: specify the location of the OU users will be moved to, this requires the parameter -moveOU to be specified
+  type: variable
+-
+  name: $targetDomain
+  description: Specific domain the script is supposed to run against. With multiple domain forests in mind, this prevents the Script running in the current logged in domain if it doesn't match the specified domain name. (To make sure you get the right domain run this command in the console and verify/match the output (Get-ADDomainController).Domain.Split('.')[0] )
+  type: variable
+-
+  name: $VerbosePreference
+  description: set to Continue, this means that console shows Verbose information without requiring the need to include the parameter. I feel it's important to view more information than not, to the point that this shows vital information on action taken and it's easy to overlook the parameter -Verbose when running it
+  type: variable

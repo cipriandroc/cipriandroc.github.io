@@ -45,7 +45,7 @@ It also `changes the description` of the targeted user/s, has the ability to `mo
 Finally it will `export a report` of user properties after action is performed and lists action taken on the accounts.
 Through the course of runtime it will `display detailed information` on the console for every action being performed.
 
-There are a couple of `safety nets` put in place to prevent the script from running if any important parameter has been omitted or if list provided has invalid formatting.
+There are a couple of `safety nets` put in place to prevent the script from running if any important parameter/variable has been omitted, contains wrong information or if list provided has invalid formatting.
 
 This script was run multiple times in production and it performed up to expectations.
 In this article I will be detailing every aspect of it.
@@ -53,8 +53,8 @@ In this article I will be detailing every aspect of it.
 
 The structure of it is made out of:
 - input variables (user list, description, export locations)
-- initialization (performs safetynet checks)
 - classes and functions
+- initialization (performs safetynet checks)
 - script block
 
 `Logic Diagram` will show detailed information on this subject. <a href="#logic_diagram" style="color:black;">`[ view now ]`</a>
@@ -66,12 +66,32 @@ When running this script in a new environment make sure to configure the variabl
 <table class="table">
   <thead>
     <tr>
+      <th scope="col">parameter name</th>
+      <th scope="col">description</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% assign variable_table = site.data.powershell.disable-adUsers_data | where: "type","variable" %}
+    {% assign parameter_table = site.data.powershell.disable-adUsers_data | where: "type","parameter" %}
+    {% for variable in parameter_table %}
+      {% assign link_button = nil %}
+      {% if variable.link_id %}
+        {% assign link_button = ' (<a href="#' | append: variable.link_id   | append: '" style="color:blue">' | append: 'more info' | append: '</a>)' %}
+      {% endif %}
+      <tr>
+        <td><code class="language-plaintext highlighter-rouge" style="word-break:unset;">{{variable.name}}</code></td>
+        <td>{{variable.description}}{{link_button}}</td>
+      </tr>
+    {% endfor %}
+  </tbody>
+    <thead>
+    <tr>
       <th scope="col">variable name</th>
       <th scope="col">description</th>
     </tr>
   </thead>
   <tbody>
-    {% for variable in site.data.powershell.disable-adUsers_variableTable %}
+    {% for variable in variable_table %}
       {% assign link_button = nil %}
       {% if variable.link_id %}
         {% assign link_button = ' (<a href="#' | append: variable.link_id   | append: '" style="color:blue">' | append: 'more info' | append: '</a>)' %}
@@ -89,29 +109,41 @@ When running this script in a new environment make sure to configure the variabl
 <hr>
 At runtime the script will perform the following checks and stop in case any of them fail and provide console information:
 - imports the userlist CSV file
-- checks if the provided CSV file contains the samAccountName header
-- tests the provided export location folder if exists
+- checks if the provided CSV file contains the samAccountName property
+- tests the provided export location folder if exists and if you have RW permission to it
+- verifies if the connected domain matches the domain specified in the variable
+- if -disableOU parameter is specified, verifies if the OU is valid and exists; currently the script doesn't check if the user that's running the script has the permission to move the object but if that's the case the console will show a warning message that moving the user failed and the report will also specify this information as well as it can be checked from the user distingusihed name that's being outputed
 
 Below is a part of the console display information at runtime:
 
 {% highlight powershell %}
-> .\Disable-ADUsers.ps1 -ticketNumber HD-485
+> .\Disable-ADUsers.ps1 -ticketNumber hd-235 -moveOU
 VERBOSE: Attempting to import userdata file .\userlist.csv
-VERBOSE: Succesfully imported userdata file.
+Succesfully imported userdata file.                                                                                     
+VERBOSE: Verifying user data file for samAccountName property.                                                          
+Property found.                                                                                                         
+VERBOSE: Verifying export folder location.                                                                              
+Test exportPath OK                                                                                                      
+VERBOSE: Verifying connected domain
+Domain connection OK
 VERBOSE: Gathering user data for: adelev
-VERBOSE: Backing up user data to file: 4.3.2021_backupUserData.txt
+VERBOSE: Backing up user data to file: 4.5.2021_backupUserData.txt
 VERBOSE: Attempting to change description filed for user: adelev
-VERBOSE: [ adelev ] succesfully changed description to 'Disabled Per - HD-485'
-Changed description to: Disabled Per - HD-485
+Changed description to: Disabled per AD Cleanup Project - hd-235
 VERBOSE: Attempting to disable user: adelev
-VERBOSE: [ adelev ] has been disabled.
 adelev has been disabled.
+VERBOSE: Attempting to move user to disable OU
+adelev has been moved to disable OU
 VERBOSE: Exporting disable information to file
 VERBOSE: Gathering user data for: awilber
-VERBOSE: Backing up user data to file: 4.3.2021_backupUserData.txt
+VERBOSE: Backing up user data to file: 4.5.2021_backupUserData.txt
 VERBOSE: Attempting to change description filed for user: awilber
-VERBOSE: [ awilber ] succesfully changed description to 'Disabled Per - HD-485'
-Changed description to: Disabled Per - HD-485
+Changed description to: Disabled per AD Cleanup Project - hd-235
+VERBOSE: Attempting to disable user: awilber
+awilber has been disabled.
+VERBOSE: Attempting to move user to disable OU
+awilber has been moved to disable OU
+VERBOSE: Exporting disable information to file
 {% endhighlight %}
 
 <hr>
