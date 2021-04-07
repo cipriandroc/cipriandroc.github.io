@@ -149,7 +149,7 @@ VERBOSE: Exporting disable information to file
 <hr>
 <h5>Output</h5>
 <hr>
-This is a sample of the CSV exported (`4.3.2021_disableReport.csv`)
+This is a sample of the CSV exported (`4.5.2021_disableReport.csv`)
 
 <!-- table block -->
 <a href="#" onclick="toggle(); return false;" style="color:black; float:right; margin:auto;">`[ expand table ]`</a>
@@ -162,6 +162,7 @@ This is a sample of the CSV exported (`4.3.2021_disableReport.csv`)
       <th scope="col">Enabled</th>
       <th scope="col">Description</th>
       <th scope="col">action</th>
+      <th scope="col">movedOU</th>
     </tr>
   </thead>
   <tbody>
@@ -177,6 +178,7 @@ This is a sample of the CSV exported (`4.3.2021_disableReport.csv`)
       <td>{{user.Enabled}}</td>
       <td>{{user.Description}}</td>
       <td>{{user.action}}</td>
+      <td>{{user.movedOU}}</td>
     </tr>
     {% assign i = i | plus:1 %}
     {%endfor%}

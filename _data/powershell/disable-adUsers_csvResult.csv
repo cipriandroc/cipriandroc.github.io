@@ -1,0 +1,11 @@
+"inputString","samAccountName","DistinguishedName","Enabled","Description","action","movedOU"
+"adelev","adelev","CN=Adele Vance,OU=Disabled M365,OU=users,OU=(snip),DC=orbi,DC=home","False","Disabled per: HD-235","disabled","True"
+"awilber","awilber","CN=Alex Wilber,OU=Disabled M365,OU=users,OU=_(snip),DC=orbi,DC=home","False","Disabled per: HD-235","disabled","True"
+"adeyoung","adeyoung","CN=Allan Deyoung,OU=Disabled M365,OU=users,OU=(snip),DC=orbi,DC=home","False","Disabled per: HD-235","disabled","True"
+"tsix",,"Cannot find an object with identity: 'tsix' under: 'DC=orbi,DC=home'.",,,"not found",
+"bpisani","bpisani","CN=Bianca Pisani,OU=Disabled M365,OU=users,OU=(snip),DC=orbi,DC=home","False","Disabled per: HD-235","disabled","True"
+,,"No userdata provided in row: Intentionally Blank,fasd fgasdg= gfasd,",,,"no valid entry",
+"cameronw","cameronw","CN=Cameron White,OU=Disabled M365,OU=users,OU=(snip),DC=orbi,DC=home","False","Disabled per: HD-235","disabled","True"
+"ccline","ccline","CN=Christie Cline,OU=Disabled M365,OU=users,OU=(snip),DC=orbi,DC=home","False","Disabled per: HD-235","disabled","True"
+"dberger","dberger","CN=Debra Berger,OU=Disabled M365,OU=users,OU=(snip),DC=orbi,DC=home","False","Disabled per: HD-235","disabled","True"
+"ddennis","ddennis","CN=Delia Dennis,OU=Disabled M365,OU=users,OU=_(snip),DC=orbi,DC=home","False","Disabled per: HD-235","disabled","True"
