@@ -1,14 +1,17 @@
 - 
   name: -ticketNumber
-  description: (mandatory)[string] input related ticket number. This will be appended to $ticketNumber string and form the Description for the disabled users
+  description: input related ticket number. This will be appended to $ticketNumber string and form the Description for the disabled users
+  tip: (mandatory)[string]
   type: parameter
 - 
   name: -moveOU
-  description: (optional)[switch] if this parameter is specified when a user is disabled it will be moved to the specified disableOU variable that's specified in the script. If user is already disabled this will not perform the move.
+  description: if this parameter is specified when a user is disabled it will be moved to the specified disableOU variable that's specified in the script. If user is already disabled this will not perform the move.
+  tip: (optional)[switch]
   type: parameter
 - 
   name: -forceMoveOU
-  description: (optional)[switch] use this parameter when you want to move the users to the disabled OU regardless of being disabled or not 
+  description: use this parameter when you want to move the users to the disabled OU regardless of being disabled or not 
+  tip: (optional)[switch]
   type: parameter
 
 

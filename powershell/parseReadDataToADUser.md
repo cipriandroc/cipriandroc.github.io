@@ -20,14 +20,17 @@ github_link: github link placeholder
 <hr>
 Every so often we receive a request to perform some actions on a batch of users. Usually these requests don't quite come in the format that we need to use, they won't include samAccountNames, userPrincipalNames or DistinguishedNames.
 
-Regular users, heck even IT Staff, will submit a request based on a copy of unformatted names, email addresses. Anything they can conveniantly grab. I've received requests that are straight copy pastas from cc'd fields or some odd excel columns that are upside down such as just a column that contains Last Name First Name , in that order. So isntead of googling Excel formuals for the nth time I found it more conveniant to write scripts around these instances. 
+Regular users, even IT Staff, will submit a request based on a copy of unformatted names, email addresses. Anything they can conveniantly grab. I've received requests that are straight copy pastas from cc'd fields or some odd excel columns that are upside down such as just a column that contains Last Name First Name , in that order. So isntead of googling Excel formuals for the nth time I found it more conveniant to write scripts around these instances. 
 
 I found this useful even before those odd requests, I was working on a case where the email list I was provided with was accurate, but even those emails had to be matched against an user object to even perform the actions needed. 
 <hr>
 <h5>Configuration</h5>
 <hr>
 There's really not a lot to configure here. We just have 2 variables:
+{% assign parameter_table = site.data.powershell.parseReadDataToADUser_data | where: "type","parameter" %}
+{% assign variable_table = site.data.powershell.parseReadDataToADUser_data | where: "type","variable" %}
 <table class="table">
+  {% if parameter_table %}
   <thead>
     <tr>
       <th scope="col">parameter name</th>
@@ -35,8 +38,6 @@ There's really not a lot to configure here. We just have 2 variables:
     </tr>
   </thead>
   <tbody>
-    {% assign variable_table = site.data.powershell.parseReadDataToADUser_data | where: "type","variable" %}
-    {% assign parameter_table = site.data.powershell.parseReadDataToADUser_data | where: "type","parameter" %}
     {% for variable in parameter_table %}
       {% assign link_button = nil %}
       {% if variable.link_id %}
@@ -48,6 +49,8 @@ There's really not a lot to configure here. We just have 2 variables:
       </tr>
     {% endfor %}
   </tbody>
+  {% endif %}
+  {% if variable_table %}
     <thead>
     <tr>
       <th scope="col">variable name</th>
@@ -66,4 +69,5 @@ There's really not a lot to configure here. We just have 2 variables:
       </tr>
     {% endfor %}
   </tbody>
+  {% endif %}
 </table>

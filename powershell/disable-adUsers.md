@@ -73,14 +73,18 @@ When running this script in a new environment make sure to configure the variabl
   <tbody>
     {% assign variable_table = site.data.powershell.disable-adUsers_data | where: "type","variable" %}
     {% assign parameter_table = site.data.powershell.disable-adUsers_data | where: "type","parameter" %}
-    {% for variable in parameter_table %}
+    {% for parameter in parameter_table %}
       {% assign link_button = nil %}
-      {% if variable.link_id %}
-        {% assign link_button = ' (<a href="#' | append: variable.link_id   | append: '" style="color:blue">' | append: 'more info' | append: '</a>)' %}
+      {% assign tip = nil %}
+      {% if parameter.link_id %}
+        {% assign link_button = ' (<a href="#' | append: parameter.link_id   | append: '" style="color:blue">' | append: 'more info' | append: '</a>)' %}
+      {% endif %}
+      {% if parameter.tip %}
+        {% assign tip = '<small>' | append: parameter.tip | append: '</small> ' %}
       {% endif %}
       <tr>
-        <td><code class="language-plaintext highlighter-rouge" style="word-break:unset;">{{variable.name}}</code></td>
-        <td>{{variable.description}}{{link_button}}</td>
+        <td><code class="language-plaintext highlighter-rouge" style="word-break:unset;">{{parameter.name}}</code></td>
+        <td>{{tip}}{{parameter.description}}{{link_button}}</td>
       </tr>
     {% endfor %}
   </tbody>
@@ -200,4 +204,4 @@ It's all of the adusers's properties before any action is being taken, just in c
 <h5 id="logic_diagram">Logic Diagram</h5>
 <hr>
 
-<img src="/assets/img/disable-adUsers_img/flowchart.svg" style="size:100%;">
+<img src="/assets/img/disable-adUsers_img/flowChart.svg" style="size:100%;">
