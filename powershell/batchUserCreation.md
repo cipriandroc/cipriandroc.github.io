@@ -3,7 +3,7 @@ layout: sublayout
 belongsto: powershell
 title: Create Batch Users
 filename: batchUserCreation.ps1
-subitem_index: 2
+subitem_index: 4
 post_date: 08.30.2020
 tags: batch, user creation, ad
 description: Controller script to create batch AD user accounts based on a CSV file. It reports the results to a CSV file. Script has multiple checks in place for error prevention.

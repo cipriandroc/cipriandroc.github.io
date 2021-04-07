@@ -3,7 +3,7 @@ layout: sublayout
 belongsto: powershell
 title: Disable ADUsers
 filename: disable-adUsers.ps1
-subitem_index: 4
+subitem_index: 1
 post_date: 04.02.2021
 tags: batch, user disable, ad
 description: Disables a batch of ADUsers based on samAccountName, sets description, moves OU, reports result, backs up user info
@@ -103,7 +103,7 @@ When running this script in a new environment make sure to configure the variabl
     {% endfor %}
   </tbody>
 </table>
-
+<small>`Note: Each exported file will contain current date`</small>
 <hr>
 <h5>Execution</h5>
 <hr>

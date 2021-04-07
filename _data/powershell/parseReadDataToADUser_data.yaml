@@ -1,0 +1,8 @@
+- 
+  name: $userList
+  description: provide a CSV file that contains either Email or DisplayName or FirstName and LastName headers, or all 3 at once for maximum performance!
+  type: variable
+- 
+  name: $exportPath
+  description: predefined location and filename for output csv file containing results
+  type: variable
