@@ -1,6 +1,23 @@
 - 
+  name: -Email
+  description: perform ADUser match based on Email Address
+  tip: (mandatory set)[switch]
+  type: parameter
+- 
+  name: -DisplayName
+  description: perform ADUser match based on DisplayName value
+  tip: (mandatory set)[switch]
+  type: parameter
+- 
+  name: -Recoursive
+  description: if main switch filter doesn't return any results, script will attempt to use the other filter to try and match
+  tip: (switch)
+  type: parameter
+
+
+- 
   name: $userList
-  description: provide a CSV file that contains either Email or DisplayName or FirstName and LastName headers, or all 3 at once for maximum performance!
+  description: provide a CSV file that contains either Email or DisplayName or FirstName or both if using the -Recoursive switch
   type: variable
 - 
   name: $exportPath
