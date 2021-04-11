@@ -89,3 +89,16 @@ At runtime the script will perform the following checks and stop in case any of 
 <h5>Output</h5>
 <hr>
 This is a sample of the CSV exported (`....csv`)
+
+The console output looks like this:
+{% highlight powershell %}
+PS > .\ConvertEmailToUPN.ps1 -Email -Recoursive
+[ adeyoung@orbi.com ] exists in domain: True
+[ Something Here ] exists in domain: False
+[ Something Blank ] exists in domain: False
+[ blank@display.name ] exists in domain: False
+[ Isaiah Langer ] exists in domain: True
+[ mgraham@orbi.com ] exists in domain: True
+[ Something Wrong ] exists in domain: False
+Information exported to file: .\4.10.2021_parseUserExport.csv
+{% endhighlight %}
