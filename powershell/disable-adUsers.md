@@ -14,7 +14,7 @@ livemode: true
 related_articles: 
   - get-inactiveADUser 
   - convert read data to ADUser
-github_link: github link placeholder
+github_link: 'https://github.com/cipriandroc/PWSH_Public_ScriptBucket/blob/main/ADScripts/Disable-ADUsers.ps1'
 ---
 <script>
 function range(start, end) {
