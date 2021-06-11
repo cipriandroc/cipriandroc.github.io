@@ -15,6 +15,7 @@ related_articles:
  - configure Azure Powershell Module
  - Get-AzureUserDetails function
 ---
+`Warning!: This page contains migrated legacy information and script requires a revamp`
 
 This script was created to report Office365 User License assigments. It’s purpose is to capture the license assignments to users wether it’s needed for reporting or before a major change such as perhaps switching to an Azure Group that has default assigments.
 The script displays a breakdown of all the license object IDs along with their Sublicenses and their status.

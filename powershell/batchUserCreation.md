@@ -11,6 +11,8 @@ highlight: true
 highlight_index: 3
 highlight_img: /assets/img/highlight_img/user_automation_transparent.png
 ---
+`Warning!: This page contains migrated legacy information and script requires a revamp`
+
 Let’s just start off with the results:
 {% highlight powershell %}
 PS C:\Users\cdroc-a\Documents\GitHub\PWSH_ScriptBucket> .\batchusercreation.ps1
