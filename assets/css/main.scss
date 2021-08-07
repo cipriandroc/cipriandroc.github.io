@@ -24,7 +24,7 @@ body {
 }
 .subContent {
     margin: auto;
-    width: 1440px;
+    width: 1080px;
     text-align:justify;
     overflow: visible;
 }
@@ -65,7 +65,7 @@ a.article:hover {
     color: #fff !important;
 }
 /* textend */
-@media only screen and (max-width: 1455px) {
+@media only screen and (max-width: 1140px) {
     div.subContent {
       width: 98%;
     }
