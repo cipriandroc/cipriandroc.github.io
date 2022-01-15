@@ -192,7 +192,7 @@ This is a sample of the CSV exported (`4.5.2021_disableReport.csv`)
 
 Next is a sample of the backup user data that appends to the output text file (`4.3.2021_backupUserData.txt`)<br>
 It's all of the adusers's properties before any action is being taken, just in case it needs to be referenced or reverted.
-<a href="#" onclick="interpret_toggle('backup_user_data_export'); return false;" style="color:black" id="userBackupExport">`[ show txt file ]`</a>
+<a href="#" onclick="interpret_toggle('backup_user_data_export'); return false;" style="color:#FF00FF" id="userBackupExport">`[ show txt file ]`</a>
 <!-- text block -->
 <div id="backup_user_data_export" style="display:none;">
 {% highlight powershell %}
