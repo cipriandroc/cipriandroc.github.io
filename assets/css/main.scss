@@ -11,6 +11,10 @@ body {
     background: #fafafa;
     min-height: 100%;
 }
+.cd-bg-dark{ 
+    background: #121212;
+    color: #fafafa;
+}
 .page-title-wrapper {
     display: inline-block;
     padding-top: 50px;
@@ -23,7 +27,7 @@ body {
 }
 .subContent {
     margin: auto;
-    width: 1080px;
+    width: 640px;
     text-align:justify;
     overflow: visible;
 }
