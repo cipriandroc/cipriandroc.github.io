@@ -17,6 +17,7 @@ github_link: https://github.com/cipriandroc/Get-InstalledSoftware.ps1
 Purpose of this script is to output information regarding installed software on the local computer or remote computers. It has the ability to output on screen as well as export to a CSV file.
 
 Let’s start off with the basics
+<div class="breakout-article-elements">
 {% highlight powershell %}
 PS C:\Users\cdroc-a\Documents\GitHub\Get-InstalledSoftware.ps1P .\Get-InstalledSoftware.ps1 edge
 ComputerName    method      searched   DisplayName             DisplayVersion       ApplicationGUID         InstallOate 
@@ -25,6 +26,7 @@ ORBI7450        registry    edge       Microsoft Edge Update   1.3.135.29       
 ORBI7450        get-package edge       Microsoft Edge          85.8.564.51                                  N/A 
 ORBI7450        get-package edge       Microsoft Edge Update   1.3.135.29                                   N/A 
 {% endhighlight %}
+</div>
 Pretty simple, run the script, input the search term as a positional parameter and get the results. Let’s discuss the results and the layout.
 We’ll start off one by one.
 
@@ -45,9 +47,9 @@ Since these two methods compliment eachother I decided to use both, more informa
 
 `DisplayName`, `DisplayVersion`, `Application GUID`, `InstallDate`: as the name suggests, these are the default property names queried from registry. The cmdlet get-package outputs slightly different and less information so I used a calculated property selection to manipulate the results into using the same property name and thus output in the same columns. I decided to output the GUID just for the convenience in case you’re trying to uninstall an application based on its GUID. Instead of having to go look it up you have a one stop place for it.
 
-<img src="https://cipriandroc.files.wordpress.com/2020/09/screen-shot-2020-09-13-at-7.13.32-pm.png">
+<img class="breakout-article-elements" src="https://cipriandroc.files.wordpress.com/2020/09/screen-shot-2020-09-13-at-7.13.32-pm.png">
 
-<img src="https://cipriandroc.files.wordpress.com/2020/09/screen-shot-2020-09-13-at-7.14.54-pm.png">
+<img class="breakout-article-elements" src="https://cipriandroc.files.wordpress.com/2020/09/screen-shot-2020-09-13-at-7.14.54-pm.png">
 
 Onto a more advanced output. This one had 3 search terms, 2 computers and the parameter to export results to a location.
 

@@ -57,7 +57,7 @@ The structure of it is made out of:
 - initialization (performs safetynet checks)
 - script block
 
-`Logic Diagram` will show detailed information on this subject. <a href="#logic_diagram" style="color:black;">`[ view now ]`</a>
+`Logic Diagram` will show detailed information on this subject. <a href="#logic_diagram" style="color:#FF00FF;">`[ view now ]`</a>
 <hr>
 <h5>Configuration</h5>
 <hr>
@@ -77,7 +77,7 @@ When running this script in a new environment make sure to configure the variabl
       {% assign link_button = nil %}
       {% assign tip = nil %}
       {% if parameter.link_id %}
-        {% assign link_button = ' (<a href="#' | append: parameter.link_id   | append: '" style="color:blue">' | append: 'more info' | append: '</a>)' %}
+        {% assign link_button = ' (<a href="#' | append: parameter.link_id   | append: '" style="color:#FF00FF">' | append: 'more info' | append: '</a>)' %}
       {% endif %}
       {% if parameter.tip %}
         {% assign tip = '<small>' | append: parameter.tip | append: '</small> ' %}
@@ -98,7 +98,7 @@ When running this script in a new environment make sure to configure the variabl
     {% for variable in variable_table %}
       {% assign link_button = nil %}
       {% if variable.link_id %}
-        {% assign link_button = ' (<a href="#' | append: variable.link_id   | append: '" style="color:blue">' | append: 'more info' | append: '</a>)' %}
+        {% assign link_button = ' (<a href="#' | append: variable.link_id   | append: '" style="color:#FF00FF">' | append: 'more info' | append: '</a>)' %}
       {% endif %}
       <tr>
         <td><code class="language-plaintext highlighter-rouge" style="word-break:unset;">{{variable.name}}</code></td>
@@ -119,15 +119,15 @@ At runtime the script will perform the following checks and stop in case any of 
 - if -disableOU parameter is specified, verifies if the OU is valid and exists; currently the script doesn't check if the user that's running the script has the permission to move the object but if that's the case the console will show a warning message that moving the user failed and the report will also specify this information as well as it can be checked from the user distingusihed name that's being outputed
 
 Below is a part of the console display information at runtime:
-
+<div >
 {% highlight powershell %}
 > .\Disable-ADUsers.ps1 -ticketNumber hd-235 -moveOU
 VERBOSE: Attempting to import userdata file .\userlist.csv
-Succesfully imported userdata file.                                                                                     
-VERBOSE: Verifying user data file for samAccountName property.                                                          
-Property found.                                                                                                         
-VERBOSE: Verifying export folder location.                                                                              
-Test exportPath OK                                                                                                      
+Succesfully imported userdata file.
+VERBOSE: Verifying user data file for samAccountName property.
+Property found.
+VERBOSE: Verifying export folder location.
+Test exportPath OK
 VERBOSE: Verifying connected domain
 Domain connection OK
 VERBOSE: Gathering user data for: adelev
@@ -149,15 +149,16 @@ VERBOSE: Attempting to move user to disable OU
 awilber has been moved to disable OU
 VERBOSE: Exporting disable information to file
 {% endhighlight %}
-
+</div>
 <hr>
 <h5>Output</h5>
 <hr>
 This is a sample of the CSV exported (`4.5.2021_disableReport.csv`)
 
+<a href="#" onclick="toggle(); return false;" style="color:#FF00FF; ">`[ expand table ]`</a>
+
 <!-- table block -->
-<a href="#" onclick="toggle(); return false;" style="color:black; float:right; margin:auto;">`[ expand table ]`</a>
-<table class="table" id="csvOutput">
+<table class="table breakout-article-elements" id="csvOutput">
   <thead>
     <tr>
       <th scope="col">#</th>
@@ -204,4 +205,4 @@ It's all of the adusers's properties before any action is being taken, just in c
 <h5 id="logic_diagram">Logic Diagram</h5>
 <hr>
 
-<img src="/assets/img/disable-adUsers_img/flowChart.svg" style="size:100%;">
+<img class="breakout-article-elements" src="/assets/img/disable-adUsers_img/flowChart.svg" style="size:100%;">
