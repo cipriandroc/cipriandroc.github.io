@@ -22,7 +22,7 @@ However, when Okta is introduced for federated M365 MFA, the overwritten data in
 Additionally, there were cases where users were already in Okta and during the migration process their profile was linked to the new Active Directory but weren't disconnected from the previous one. In this case the manual overwrite becomes impacted as in the case of two active AD's the immutableId field is blank or in case the previous AD was declared inactive in Okta the value derives from the remaining active AD and cannot be overwritten. 
 
 <hr>
-<h5>Solution</h5>
+<h5>Advice</h5>
 <hr>
 
 The obvious solution would be to export all Azure Users and search them by their Azure 'OnPremisesImmutableId' to the AD user that has the matching 'ms-DS-ConsistencyGuid'. A further check can be put in place to see if other properties match such as samAccountName, etc. 
@@ -31,4 +31,9 @@ Then after confirming a user mapping, converting the users AD GUID to base64 and
 This doesn't cover Okta and needs to be addressed separately in Okta by properly disconnecting these users from their inactive/additional AD and unasigning/reasigning the M365 app/group. Whichever way it's been mapped through.
 
 I would like to address below a different approach that targets affected users directly based on the additional Okta AD.
+
+<hr>
+<h5>Solution</h5>
+<hr>
+
 To be continued.
