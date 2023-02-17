@@ -159,7 +159,7 @@ This is a sample of the CSV exported (`4.5.2021_disableReport.csv`)
 
 <!-- table block -->
 <div style="text-align:center;">
-<table class="table breakout-article-elements" id="csvOutput">
+<table class="table" id="csvOutput">
   <thead>
     <tr>
       <th scope="col">#</th>
