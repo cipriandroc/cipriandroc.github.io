@@ -11,9 +11,6 @@ highlight: true
 highlight_index: 1
 highlight_img:
 livemode: true
-related_articles: 
-  - get-inactiveADUser 
-  - convert read data to ADUser
 github_link: 'https://github.com/cipriandroc/PWSH_Public_ADUser_Scripts/blob/main/Disable-ADUsers.ps1'
 ---
 <script>
