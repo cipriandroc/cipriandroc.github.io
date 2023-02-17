@@ -158,7 +158,6 @@ This is a sample of the CSV exported (`4.5.2021_disableReport.csv`)
 <a href="#" onclick="toggle(); return false;" style="color:#FF00FF; ">`[ expand table ]`</a>
 
 <!-- table block -->
-<div style="text-align:center;">
 <table class="table" id="csvOutput">
   <thead>
     <tr>
@@ -190,7 +189,6 @@ This is a sample of the CSV exported (`4.5.2021_disableReport.csv`)
     {%endfor%}
   </tbody>
 </table>
-</div>
 
 Next is a sample of the backup user data that appends to the output text file (`4.3.2021_backupUserData.txt`)<br>
 It's all of the adusers's properties before any action is being taken, just in case it needs to be referenced or reverted.
