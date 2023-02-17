@@ -205,4 +205,4 @@ It's all of the adusers's properties before any action is being taken, just in c
 <h5 id="logic_diagram">Logic Diagram</h5>
 <hr>
 
-<img class="breakout-article-elements" src="/assets/img/disable-adUsers_img/flowChart.svg" style="size:100%;">
+<img class="breakout-article-elements" src="/assets/img/disable-adUsers_img/flowChart.svg" style="display: block; margin: 0 auto;">
