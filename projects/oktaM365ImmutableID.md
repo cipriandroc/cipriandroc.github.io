@@ -2,7 +2,7 @@
 layout: sublayout
 belongsto: projects
 title: Okta to M365 Immutable ID match
-filename: oktaM365ImmutableID.ps1
+filename: oktaM365ImmutableID.md
 subitem_index: 1
 post_date: 02.05.2023
 tags: okta, m365, mfa, federation, ad, active directory
